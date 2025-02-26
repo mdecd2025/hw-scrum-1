@@ -12,7 +12,7 @@ version = "3.13.2"
 # Python msi download URL
 ftp = "https://www.python.org/ftp/python/" + version + "/amd64/"
 # location for Portable Python
-path = "C:\\tmp\\Python313"
+path = dir_path + "\\Python313"
 # create directory
 try:
     os.mkdir(path)
