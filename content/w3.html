@@ -2,7 +2,7 @@
         <head>
         <title>cd-scrum-1</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -142,11 +142,58 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">HW1 << <a href='HW1.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3<br /><h1>HW2</h1>
-<p>HW2 (5%): <span style="background-color: #ffff00;">建立由 CAD 繪製零件組成的平面四連桿機構 Webots 模擬場景</span></p>
-<p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 學員學號</p>
-<p></p>
-<br />HW1 << <a href='HW1.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3</div>
+    <div id="tipue_search_content">task2 << <a href='task2.html'>Previous</a> <a href='task3.html'>Next</a> >> task3<br /><h1>w3</h1>
+<p><a href="https://mdecd2025.github.io/hw-scrum-1/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9f3df9d865a7ceca8e799ee9b1a31602/raw/113a3d7e19b36a7672a136f3731ef07b095adeef/list_2a.py">列出 2a 學員作業網站與倉儲連結</a></p>
+<p><a href="https://mdecd2025.github.io/hw-scrum-1/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9f3df9d865a7ceca8e799ee9b1a31602/raw/29173e8b73ad422fd7c44bcd93658a3579d63633/list_stage_3.py">列出 2b 學員作業網站與倉儲連結</a></p>
+<p><a href="https://mdecd2025.github.io/hw-scrum-1/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9f3df9d865a7ceca8e799ee9b1a31602/raw/a4414e311503fac8d57d4f5e44999147c54cf7fa/list_2a_group.py">列出 2a 分組網站與倉儲連結</a></p>
+<p><a href="https://mdecd2025.github.io/hw-scrum-1/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9f3df9d865a7ceca8e799ee9b1a31602/raw/a4414e311503fac8d57d4f5e44999147c54cf7fa/list_2b_group.py">列出 2b 分組網站與倉儲連結</a></p>
+<hr/>
+<p>請列出各班目前尚未納入分組的學員名單.</p>
+<p>透過下列程式:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import os
+# pip install pygithub
+from github import Github
+# the following is under IPv6
+# Replace these variables with your own details
+GITHUB_TOKEN = 'your_token'
+ORG_NAME = 'mdecd2025'
+PROXY = 'http://p4.cycu.org:3128'
+
+def get_all_team_members_starting_with_a(org_name, token, proxy):
+    # Set proxy environment variables
+    os.environ['http_proxy'] = proxy
+    os.environ['https_proxy'] = proxy
+
+    # Initialize Github object
+    g = Github(token)
+    all_members = []
+
+    try:
+        # Get organization
+        org = g.get_organization(org_name)
+        
+        # Get all teams
+        teams = org.get_teams()
+        
+        for team in teams:
+            if team.name.lower().startswith('g'):
+                print(f"Processing team: {team.name}")
+                # List members
+                members = team.get_members()
+                for member in members:
+                    all_members.append(member.login)
+                    print(f"Login: {member.login}, ID: {member.id}, URL: {member.html_url}")
+                    
+        print("\nAll members:", all_members)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
+    get_all_team_members_starting_with_a(ORG_NAME, GITHUB_TOKEN, PROXY)</pre>
+<p>已知各班已經參與分組的學員 Github 帳號分別如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">a_all_members = ['41223154', '41271125', '41271158', '41271146', '41271131', 'CYG41223103', '41223102', '41023128', '41023137', '41223137', '41223157', '41223156', 'otakuyoyo', '41223141', '41223113', 'kim41223114', 'joeisme1208', '41223116', '41223144', '41223140', '41223143', '41223138', '41223134', '41223136', 'zhe41223118', 'Spirit0224', 'yuhao-08', '41223158', 'Ren911308', '41223150', 'Manto8', 'CYA41223106', 'yan21ed', 'Lin41223107', '41223133', 'hong41223129', '41223110', '41223147', 'Linjiahong41223125', 'CHN41223132', 'Yu-Fang-Hong', '41023111', 'yckaooooo', 'kolas911205', '41023105', '40932134', '41223104', 'yan41223101', '41223105', '41223153', '41223120', '41223152', 'G8People', 'WSE41223112', '41223146', '41223119']
+b_all_members = ['41223251', '41223211', '41223245', '41223243', 'jjjay41223212', 'leeshaowei0716', '41223234', '41223209', '41223205', '41223201', '41223202', '41223208-hw', '41223216', '41223217', '41223248', 'emma0312', '41223242', '41223203', '41223144', '41223235', 'RAY41223215', 'hyy41223228', '41223227', '41223206', '41223226-0', 'Cloud41223237', 'Yujenchuang', '41223225', 'ljg41223220', 'supowen', 'jacky93111', '41223246', 'Liu41223244', '41223236', '41223219', '41271237', '41223249', '41223229', '41223224', '41223222', '41223231', 'linryan23', '41023114', '41223230', 'timluo123', 'CYC41223247', '41223218', 'ych0227', '41023215', '41023216', '41023213', '41071203', '41071204', '41071202', 'c-ching', 'YUN4', 'tseYU000', 'snowfall-killer', 'junpig10']</pre>
+<p>請接著列出目前各班尚未納組的學員學號.</p><br />task2 << <a href='task2.html'>Previous</a> <a href='task3.html'>Next</a> >> task3</div>
         
     <!-- footer -->
       <div class="container">
