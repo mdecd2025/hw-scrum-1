@@ -182,7 +182,11 @@ for i in all_stud:
     stud_num = stud[0]
     stud_github = stud[1]
     print("學號為 ", stud_num, " 的學員, 其 Github 帳號為 ", stud[1])</pre>
-<p>因為隨後可以透過比對取得尚未納組的學員 Github 帳號, 且必須設法從其 Github 帳號, 取得其對應學號, 因此若能從上列程式設法建立一個 Dict, 支援輸入 Github  帳號可以回覆其對應學號, 就可以順利找出目前尚未納組的學員學號.</p><h2>task3</h2>
+<p>原先想法:</p>
+<p style="padding-left: 30px;">因為隨後可以透過比對取得尚未納組的學員 Github 帳號, 且必須設法從其 Github 帳號, 取得其對應學號, 因此若能從上列程式設法建立一個 Dict, 支援輸入 Github  帳號可以回覆其對應學號, 就可以順利找出目前尚未納組的學員學號. 另外是否也必須查驗是否有學員加入錯誤的班級組別?</p>
+<p>實際解法:</p>
+<p style="padding-left: 30px;">因為上列程式已經給出兩班當時已經參與分組的學員 Github 帳號, 因此只需要從 <a href="https://mde.tw/list/2b.txt">https://mde.tw/list/2b.txt</a> 讀取學員的學號與 Github 帳號, 並且在 for 迴圈中, 逐一用學員的 Github 帳號相對於各班已經參與分組的學員 Github 帳號, 並且列出特定學員的 Github 帳號不在前述已經參與分組的學員帳號數列中, 即可列出截至當時尚未那組的學員學號.</p>
+<h3>w4</h3><h2>task3</h2>
 <h4>使用 Solvespace 建立平面四連桿系統零組件 (HW2)</h4><h2>task4</h2>
 <h4>使用 Onshape 建立平面四連桿系統零組件 (HW2)</h4>
 <h2>task5</h2>
