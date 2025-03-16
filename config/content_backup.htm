@@ -43,12 +43,18 @@
 <p>solvespace 零組件繪圖過程畫面:</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="cdw3_cad" height="630" muted="true" width="1008">
 <source src="/downloads/wink/cdw3_cad.mp4" type="video/mp4"/></video></div><h3>Fossil</h3>
+<p>demo 倉儲與 <a href="https://rocket.cycu.org/cdhw">https://rocket.cycu.org/cdhw</a> 內容同步</p>
+<p>經由 proxy server 執行 fossil clone:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">set http_proxy=http://p4.cycu.org:3128
+
+set https_proxy=http://p4.cycu.org:3128
+
+fossil clone https://username@server.name/fossilname fossilname.fossil</pre>
 <p>Fossil SCM 的應用</p>
 <p><a href="https://fossil-scm.org/">https://fossil-scm.org/</a> </p>
 <p>Github 與 Fossil SCM 結合應用範例:</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="wcmw3_fossil1" height="630" muted="true" width="1008">
-<source src="/downloads/wink/wcmw3_fossil1.mp4" type="video/mp4"/></video></div>
-<h2>task1</h2>
+<source src="/downloads/wink/wcmw3_fossil1.mp4" type="video/mp4"/></video></div><h2>task1</h2>
 <h4>自行製作可攜程式系統</h4>
 <p>此作業的目的在展示如何利用既有的 Python 可攜系統建立各版本的 Python 可攜環境.</p>
 <p>以下為操作步驟:</p>
@@ -195,7 +201,7 @@ for i in all_stud:
 <p style="padding-left: 30px;">2. Robot 物件的功能<br/><br/>    控制器綁定：每個 Robot 物件都需要指定一個控制器（controller），這是用來定義機器人行為的程式（可以用 C、C++、Python 等語言編寫）。沒有 Robot，就無法運行控制器，也無法模擬機器人的動作或決策。<br/>    感測器與執行器：Robot 物件是感測器（例如攝影機、距離感測器）和執行器（例如馬達、輪子）的容器。這些設備必須依附於一個 Robot 節點才能運作。<br/>    物理屬性：Robot 物件定義了機器人在模擬環境中的物理存在，例如位置、質量和形狀。如果沒有這個物件，場景中就沒有可以與物理引擎交互的實體。<br/><br/>3. 場景的結構要求<br/><br/>在 Webots 中，場景檔案（.wbt 檔案）是一個層次化的描述，所有的節點都必須遵循一定的語法規則。Robot 節點通常作為場景中的頂層節點之一，直接或間接連接到根節點（World）。如果沒有 Robot，場景可能只包含靜態物件（例如牆壁或地板），但無法進行動態模擬，因為缺少能夠主動參與模擬的實體。</p>
 <p style="padding-left: 30px;">4. 實際操作中的必要性<br/><br/>當你建立一個 Webots 場景時，通常的目的是模擬某個機器人的行為（例如移動、避障、抓取物品等）。因此，第一步通常是定義一個 Robot 物件，然後在這個物件下添加必要的子節點（例如 DifferentialWheels、感測器等），以實現模擬目標。換句話說，Robot 是場景的起點，沒有它，後續的配置就無從談起。</p>
 <p style="padding-left: 30px;">總結<br/><br/>建立 Webots 場景需要先建立 Robot 物件，因為它是模擬的核心實體，承載了控制器、感測器、執行器和物理屬性等功能。沒有 Robot，場景就只是一個靜態的環境，無法實現動態的機器人模擬。這是 Webots 設計上的基本要求，也是模擬流程的邏輯起點。</p>
-<p>Webots 在建立連桿機構模型時, 是否無法建立 closed chain 機構的 kinematics 模型, 只能建立 dynamic model?</p>
+<p><span style="background-color: #ffff99;">Webots 在建立連桿機構模型時, 是否無法建立 closed chain 機構的 kinematics 模型, 只能建立 dynamic model?</span></p>
 <p style="padding-left: 30px;">在 Webots 中，建立連桿機構模型時，的確有一些限制。Webots 是一個仿真軟體，主要用於機器人和機械系統的動態仿真，並且使用的模型大多是基於動態模型（dynamic models）來進行運算和仿真。對於一個閉環機構（closed-chain mechanism），Webots 不提供直接建立其運動學（kinematics）模型的工具或算法。</p>
 <p style="padding-left: 30px;">1. 關於閉環機構的幾點說明：<br/><br/>    運動學（Kinematics）是描述機構運動的幾何學模型，通常關注的是位置、速度和加速度等。<br/>    動力學（Dynamics）則是考慮外力、慣性、摩擦等物理因素，描述機構在運動過程中的力學行為。<br/><br/>2. Webots 中的模型類型：<br/><br/>    Webots 主要依賴動力學模型來處理仿真，這些模型包括力學運算、質量、慣性矩等。在處理一個閉環機構（例如機械手臂中帶有閉環結構的部分）時，Webots 更加強調的是系統的運動學和動力學的結合，並通過數值積分來解決動態方程，而不是像一些其他專門的運動學求解軟體（如 MATLAB、Adams 等）一樣單獨進行運動學建模。<br/><br/>3. 關於閉環機構的仿真：<br/><br/>    當建立閉環機構模型時，Webots 並不直接提供基於閉環運動學的求解器。相反，Webots 會通過動態模型，並將閉環運動的約束作為力學條件來進行處理。因此，它會基於質量、力和慣性等動態特徵來解算運動。<br/>    若需要精確的運動學建模，可以考慮在外部工具中（如 MATLAB、Simulink 或 ROS）進行運動學建模，再將結果導入到 Webots 進行動態仿真。<br/><br/>總結：<br/><br/>Webots 在處理閉環機構時，主要側重於動力學模型的建立，而不是運動學模型。它能夠處理閉環結構的動態行為，但不直接提供基於運動學的閉環求解。對於複雜的運動學分析，可能需要借助其他專業工具來處理，然後將結果匯入 Webots 進行仿真。</p>
 <p data-pm-slice="1 1 []"><span style="background-color: #ffff99;">請就此點與 CoppeliaSim 建模進行比較</span></p>
