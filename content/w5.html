@@ -152,7 +152,44 @@ img.add_border {
 <p dir="auto">平面四連桿的尺寸設計: 固定桿長度為 1m, 主動旋轉桿長度為 0.4m, 第二旋轉桿長度為 0.6m, 第三旋轉桿長度為 0.9m.</p>
 <p dir="auto">工具: Webots R2025a, Solvespace 3.1, Python 3.13.2, 可攜程式環境 wcm2025</p>
 <p dir="auto">希望完成的模擬結果如下:</p>
-<p dir="auto"><img alt="" height="349" src="./../images/w5_box_fourbar.gif" width="400"/></p><br />w4 << <a href='w4.html'>Previous</a> <a href='task5.html'>Next</a> >> task5</div>
+<p dir="auto"><img alt="" height="349" src="./../images/w5_box_fourbar.gif" width="400"/></p>
+<p dir="auto"><a href="https://cyberbotics.com/doc/guide/introduction-to-webots">https://cyberbotics.com/doc/guide/introduction-to-webots</a> </p>
+<h4 dir="auto">What is Webots?</h4>
+<p style="padding-left: 30px;">Webots is a professional mobile robot simulation software package. It offers a rapid prototyping environment, that allows the user to create 3D virtual worlds with physics properties such as mass, joints, friction coefficients, etc.</p>
+<p style="padding-left: 30px;">The user can add simple passive objects or active objects called mobile robots. These robots can have different locomotion schemes (wheeled robots, legged robots, or flying robots). Moreover, they may be equipped with a number of sensor and actuator devices, such as distance sensors, drive wheels, cameras, motors, touch sensors, emitters, receivers, etc.</p>
+<p style="padding-left: 30px;">Finally, the user can program each robot individually to exhibit the desired behavior. Webots contains a large number of robot models and controller program examples to help users get started.</p>
+<p style="padding-left: 30px;">Webots also contains a number of interfaces to real mobile robots, so that once your simulated robot behaves as expected, you can transfer its control program to a real robot like e-puck, DARwIn-OP, Nao, etc. Adding new interfaces is possible through the related system.</p>
+<h4>Webots Simulation:</h4>
+<p style="padding-left: 30px;">A Webots simulation is composed of following items:</p>
+<p style="padding-left: 30px;">A Webots world file (.wbt) that defines one or several robots and their environment. The .wbt file does sometimes depend on external PROTO files (.proto) and textures.</p>
+<p style="padding-left: 30px;">One or several controller programs for the above robots (in C/C++/Java/Python/MATLAB).</p>
+<p style="padding-left: 30px;">An optional physics plugin that can be used to modify Webots regular physics behavior (in C/C++).</p>
+<h4>What is a world?</h4>
+<p style="padding-left: 30px;">A world, in Webots, is a 3D description of the properties of robots and of their environment. It contains a description of every object: position, orientation, geometry, appearance (like color or brightness), physical properties, type of object, etc.</p>
+<p style="padding-left: 30px;">Worlds are organized as hierarchical structures where objects can contain other objects (like in VRML97).</p>
+<p style="padding-left: 30px;">For example, a robot can contain two wheels, a distance sensor and a joint which itself contains a camera, etc.</p>
+<p style="padding-left: 30px;">A world file doesn't contain the controller code of the robots; it only specifies the name of the controller that is required for each robot. Worlds are saved in ".wbt" files. The ".wbt" files are stored in the "worlds" subdirectory of each Webots project.</p>
+<h4>What is a Controller?</h4>
+<p style="padding-left: 30px;">A controller is a computer program that controls a robot specified in a world file.</p>
+<p style="padding-left: 30px;">Controllers can be written in any of the programming languages supported by Webots: C, C++, Java, Python or MATLAB.</p>
+<p style="padding-left: 30px;">When a simulation starts, Webots launches the specified controllers, each as a separate process, and it associates the controller processes with the simulated robots.</p>
+<p style="padding-left: 30px;">Note that several robots can use the same controller code, however a distinct process will be launched for each robot.</p>
+<p style="padding-left: 30px;">Some programming languages need to be compiled (C and C++) other languages need to be interpreted (Python and MATLAB) and some need to be both compiled and interpreted (Java).</p>
+<p style="padding-left: 30px;">For example, C and C++ controllers are compiled to platform-dependent binary executables (for example ".exe" under Windows).</p>
+<p style="padding-left: 30px;">Python and MATLAB controllers are interpreted by the corresponding run-time systems (which must be installed).</p>
+<p style="padding-left: 30px;">Java controller need to be compiled to byte code (".class" files or ".jar") and then interpreted by a Java Virtual Machine.</p>
+<p style="padding-left: 30px;">The source files and binary files of each controller are stored together in a controller directory. A controller directory is placed in the "controllers" subdirectory of each Webots project.</p>
+<h4>What is a Supervisor Controller?</h4>
+<p style="padding-left: 30px;">The Supervisor controller is the controller of a Robot whose supervisor field is set to TRUE, it can execute operations that can normally only be carried out by a human operator and not by a real robot.</p>
+<p style="padding-left: 30px;">The Supervisor controller can be written in any of the above mentioned programming languages. However, in contrast with a regular Robot controller, the Supervisor controller will have access to privileged operations. The privileged operations include simulation control, for example, moving the robots to a random position, making a video capture of the simulation, etc.</p>
+<h4>Starting Webots:</h4>
+<p>start.bat contains setup for Webots:</p>
+<p style="padding-left: 30px;">REM for Webots<br/>set PYTHON_PATH=%Disk%:\<span style="background-color: #ffff00;">Python313</span></p>
+<p style="padding-left: 30px;">REM for webots<br/>set <span style="background-color: #ffff00;">path_webots</span>=%Disk%:\<span style="background-color: #ffff00;">Webots_2025a</span>\msys64\mingw64\bin;%Disk%:\Webots_2025a\msys64\usr\bin</p>
+<p style="padding-left: 30px;">path=%Disk%:;%path_python%;%path_git%;%path_copsim%;%path_msys2%;%path_miketex%;%path_flutter%;%path_node%;%path_tcc%;%path_postgresql%;%path_range%;%path_lua%;%path_core%;%path_putty%;%path_vscode%;%RUST_PATH%;%path_erlang%;%path_nodejs%;%path_haskell%;%path_scite%;%path_xsltproc%;%path_gnuplot%;%path_openssl%;%path_poppler%;<span style="background-color: #ffff00;">%path_webots%</span>;%path_blender%;%path%;</p>
+<p style="padding-left: 30px;">Therefore, under portable system dos windows, key in "webotsw" to start Webots.</p>
+<h4>User Interface:</h4>
+<p style="padding-left: 30px;"><a href="https://cyberbotics.com/doc/guide/the-user-interface">https://cyberbotics.com/doc/guide/the-user-interface</a> </p><br />w4 << <a href='w4.html'>Previous</a> <a href='task5.html'>Next</a> >> task5</div>
         
     <!-- footer -->
       <div class="container">
