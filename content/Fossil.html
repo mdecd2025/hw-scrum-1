@@ -144,6 +144,8 @@ img.add_border {
         </header>
     <div id="tipue_search_content">Wink << <a href='Wink.html'>Previous</a> <a href='task1.html'>Next</a> >> task1<br /><h1>Fossil</h1>
 <p>Fossil server 與 Git 倉儲結合可以提供協同者參與 Forum 討論, 且在不登入情況下 <a href="https://rocket.cycu.org/cdhw/forum">view Forum</a>.</p>
+<p style="padding-left: 30px;">權限設定如下:</p>
+<p style="padding-left: 30px;">Forum     /forum       {@2 3 4 5 6}   {}</p>
 <p>demo 倉儲與 <a href="https://rocket.cycu.org/cdhw">https://rocket.cycu.org/cdhw</a> 內容同步</p>
 <p>經由 proxy server 執行 fossil clone:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">set http_proxy=http://p4.cycu.org:3128
@@ -156,7 +158,18 @@ fossil clone https://username@server.name/fossilname fossilname.fossil</pre>
 <p>Github 與 Fossil SCM 結合應用範例:</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="wcmw3_fossil1" height="630" muted="true" width="1008">
 <source src="./../downloads/wink/wcmw3_fossil1.mp4" type="video/mp4"/></video></div>
-<br />Wink << <a href='Wink.html'>Previous</a> <a href='task1.html'>Next</a> >> task1</div>
+<p>Github 與 Fossil 內容整合:</p>
+<p>fossil init test.fossil</p>
+<p>fossil ui test.fossil add https://fonts.googleapis.com for csp and __pycache__ to ignore</p>
+<p>mkdir wd</p>
+<p>cd wd</p>
+<p>git clone https://github.com/mdecd2025/hw-scrum-1.git cdhw</p>
+<p>cd cdhw</p>
+<p>fossil open ./../../test.fossil --force</p>
+<p>在 wd/cdhw 目錄中僅使用 git pull 取 github 內容, 不進行維護版本, git ignore _FOSSIL_</p>
+<p>在 wd/cdhw 中使用 fossil add ., fossil commit -m after git pull</p>
+<p>在 test.fossil 所在目錄, fossil ui test.fossil 處理 Forum and Wiki 改版</p>
+<p>若 wd/cdhw 非為 server side 則可以 fossil push 或 fossil update to sync with server</p><br />Wink << <a href='Wink.html'>Previous</a> <a href='task1.html'>Next</a> >> task1</div>
         
     <!-- footer -->
       <div class="container">
