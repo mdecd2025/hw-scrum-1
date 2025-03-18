@@ -74,7 +74,8 @@
 <p>目前 cmsimde 使用 Brython 3.12.3, 嘗試更新為 3.12.4 以上版本時, 發現在靜態網頁會與 template chimper 中的 jquery 版本內容衝突, 導致無法從 URL 取下 gist 的 Brython 程式內容.</p>
 <p>之後可以測試採用 Brython 3.13.2 最新版本, 但在動態與靜態網頁執行 Brython 程式時, 可以將原始碼放入 html 頁面, 並利用 Button 直接進行存取. 可以從 <a href="https://github.com/mdecycu/cmsimde_site">https://github.com/mdecycu/cmsimde_site</a> 建立 Branch 進行測試.</p>
 <p>題外:</p>
-<p><a href="https://software.nfu.edu.tw/Office/tw/Office_Pro_Plus_2016_64Ch.iso">下載 Office 2016.iso</a><span>, 與 </span><a href="https://software.nfu.edu.tw/KMS/Office_2016_KMS.bat">2016_office_kms.bat</a> from <a href="https://2019wcm.blogspot.com">https://2019wcm.blogspot.com</a> </p><h2>task2</h2>
+<p><a href="https://software.nfu.edu.tw/Office/tw/Office_Pro_Plus_2016_64Ch.iso">下載 Office 2016.iso</a><span>, 與 </span><a href="https://software.nfu.edu.tw/KMS/Office_2016_KMS.bat">2016_office_kms.bat</a> from <a href="https://2019wcm.blogspot.com">https://2019wcm.blogspot.com</a> </p>
+<p>問題: 41223144 納入 b 班 g3??</p><h2>task2</h2>
 <h4>使用 SSH 協定執行作業倉儲的推送</h4>
 <p><a href="https://zh.wikipedia.org/zh-tw/Secure_Shell">SSH</a> 是一種加密的網路傳輸協定, PuTTY 則是可用於 Windows 環境的 SSH 協定工具, 其中支援遠端登入 (putty.exe) 與檔案傳輸工具 (psftp.exe).</p>
 <p>使用 PuTTY 所建立的公私鑰進行 Github push 認證的步驟:</p>
@@ -182,7 +183,17 @@ for i in all_stud:
     stud_num = stud[0]
     stud_github = stud[1]
     print("學號為 ", stud_num, " 的學員, 其 Github 帳號為 ", stud[1])</pre>
-<p>因為隨後可以透過比對取得尚未納組的學員 Github 帳號, 且必須設法從其 Github 帳號, 取得其對應學號, 因此若能從上列程式設法建立一個 Dict, 支援輸入 Github  帳號可以回覆其對應學號, 就可以順利找出目前尚未納組的學員學號.</p><h2>task3</h2>
+<p>只要在迴圈中加入下列判斷式:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#print("學號為 ", stud_num, " 的學員, 其 Github 帳號為 ", stud[1])
+if stud_github not in a_all_members:
+    print(stud_num)</pre>
+<p>即可取得下列尚未納組的學員學號:</p>
+<p><a href="https://mdecd2025.github.io/hw-scrum-1/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9f3df9d865a7ceca8e799ee9b1a31602/raw/1ef87e0d43210f34d48ea6559a6a74d075d6a253/2a_not_in_group.py">2a</a>:</p>
+<p>41023220<br/>41223111<br/>41223119<br/>41223124<br/>41223148</p>
+<p><a href="https://mdecd2025.github.io/hw-scrum-1/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9f3df9d865a7ceca8e799ee9b1a31602/raw/addb4810bed04a15b77e94720cf7de231f380591/2b_not_in_group.py">2b</a>:</p>
+<p>40923137<br/>41023237<br/>41223210<br/>41223214<br/>41223223<br/>41223232<br/>41223233<br/>41223239<br/>41223245<br/>41271217<br/>41271236</p>
+<p></p>
+<p></p><h2>task3</h2>
 <h4>使用 Solvespace 建立平面四連桿系統零組件 (HW2)</h4><h2>task4</h2>
 <h4>使用 Onshape 建立平面四連桿系統零組件 (HW2)</h4>
 <h2>task5</h2>
