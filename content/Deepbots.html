@@ -2,7 +2,7 @@
         <head>
         <title>cd-scrum-1</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -142,22 +142,45 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">HW3 << <a href='HW3.html'>Previous</a> <a href='Exam.html'>Next</a> >> Exam<br /><h1>Midterm</h1>
-<p>本課程所繳交的期中成績為學員自評之學習期望成績.</p>
-<p>期中考週的自評期望成績繳交流程:</p>
+    <div id="tipue_search_content">Webots << <a href='Webots.html'>Previous</a> <a href='task6.html'>Next</a> >> task6<br /><h1>Deepbots</h1>
+<h4><a href="https://link.springer.com/chapter/10.1007/978-3-030-49186-4_6">Deepbots: A Webots-Based Deep Reinforcement Learning Framework for Robotics</a></h4>
+<h4>概要</h4>
+<p>Deepbots 是一個開源框架，結合了 <a href="https://github.com/openai/gym">OpenAI Gym</a> 介面和 Webots 機器人模擬器，以標準化方式在各種機器人場景中應用深度強化學習（DRL）。該框架旨在減少開發工作量，讓研究人員能夠輕鬆地在 Webots 中開發 DRL 方法。本文通過代碼示例和三個難度不同的案例展示了該框架的有效性。</p>
+<h4>主要貢獻</h4>
+<ul>
+<li>提供一個易於使用的 DRL 介面，結合 OpenAI Gym 和 Webots。</li>
+<li>簡化了 DRL 方法的開發，處理了低層細節。</li>
+<li>提供即用型標準化環境和額外的監控工具（如 tensorboard 日誌和繪圖）。</li>
+</ul>
+<h4>重要特點</h4>
+<ul>
+<li><strong>Webots</strong>: 專業的 3D 機器人模擬器，支持多種機器人和傳感器。</li>
+<li><strong>OpenAI Gym</strong>: 標準化的 DRL 介面，提供經典的 agent-environment 循環。</li>
+<li><strong>Deepbots 框架</strong>: 作為 Webots 和 DRL 算法之間的中介，提供多層次的抽象和高代碼可讀性及可重用性。</li>
+</ul>
+<h4>相關工作</h4>
+<ul>
+<li><strong>OpenAI Gym</strong>: 標準化 RL 測試環境，但僅限於簡單、不現實的場景。</li>
+<li><strong>Gazebo</strong>: 另一個流行的機器人模擬器，但圖形質量較低。</li>
+<li><strong>Isaac Gym</strong>: 提供照片真實渲染和平行處理，但為閉源軟件。</li>
+</ul>
+<h4>Deepbots 架構</h4>
+<ul>
+<li><strong>Supervisor Controller</strong>: 監督者控制器，負責從環境中獲取觀察並與 agent 交流。</li>
+<li><strong>Robot Controller</strong>: 機器人控制器，負責從傳感器讀取數據並執行動作。</li>
+<li><strong>通信機制</strong>: 使用發射器和接收器進行消息傳遞。</li>
+</ul>
+<h4>案例環境</h4>
 <ol>
-<li>整理先前所完成的各週的進度、作業網頁內容以及心得</li>
-<li>拍攝期中自評影片, 上傳至 Youtube 後, 以"<span style="background-color: #ffff00;">國立虎尾科技大學 - 機械設計工程系 - cd2025 期中自評- 學員學號</span>"為影片標題後嵌入本頁面中</li>
-<li>回填期中自評表單</li>
-<li>上傳學員期中成績</li>
+<li><strong>CartPole</strong>: 維持倒立擺垂直，使用 <a href="https://arxiv.org/abs/1707.06347">PPO 算法</a>。</li>
+<li><strong>Pit Escape</strong>: BB-8 機器人從坑中逃脫，使用 <a href="https://arxiv.org/abs/1707.06347">PPO 算法</a>。</li>
+<li><strong>Find the Ball and Avoid Obstacles</strong>: E-puck 機器人找到目標並避開障礙物，使用 <a href="https://www.sciencedirect.com/science/article/pii/S2405844024067288">DDPG 算法</a>。</li>
 </ol>
-<p>各週進度:</p>
-<p>各週網頁內容:</p>
-<p>期中心得:</p>
-<p>期中自評影片:</p>
-<p></p>
-<p style="padding-left: 30px;"></p>
-<br />HW3 << <a href='HW3.html'>Previous</a> <a href='Exam.html'>Next</a> >> Exam</div>
+<h4>結論</h4>
+<p>Deepbots 為想在高保真模擬器 Webots 中應用 RL 和 DRL 的研究人員提供了一個標準化的方法，適用於多種研究和教育用途。</p>
+<h4>參考文獻</h4>
+<p>提供了一系列相關文獻和資源鏈接，包括 OpenAI Gym、Gazebo、Isaac Gym 等。</p>
+<p>Deepbots 框架的源代碼和更多信息可在 <a href="https://github.com/aidudezzz/deepbots">GitHub</a> 上找到。</p><br />Webots << <a href='Webots.html'>Previous</a> <a href='task6.html'>Next</a> >> task6</div>
         
     <!-- footer -->
       <div class="container">
