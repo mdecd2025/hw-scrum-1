@@ -413,6 +413,7 @@ set  path_webots=%Disk%:\Webots_2025a\msys64\mingw64\bin;%Disk%:\Webots_2025a\ms
 <p>由於 link1 最後需要透過碰撞檢測來與籃球互動, 因此除了 dynamic simulation 之外, 還需要設定 boundingObject, 才能界定 link1 的碰撞幾何外形, 但由於前面的 link1 並非在其 parent 座標系統的物件中心旋轉, 而是透過其局部座標轉換 (利用 pose 物件達成), 往局部 x 方向移動 0.2m, 因此 boundingObject 在引用其 shape 時, 也必須透過 pose 轉換到 link1 最終所在位置.</p>
 <p><span>上列流程所完成的 Webots 專案檔: </span><a href="https://localhost:9448/downloads/w6_demo_project.7z">w6_demo_project.7z</a> (joint on link1)</p>
 <p><a href="/downloads/w6_joint_on_base_project.7z">w6_joint_on_base_project.7z</a> (joint on base)</p>
+<p></p>
 <p></p><h2>task5</h2>
 <h4>Webots Tutorial 1 ~3 (HW3)</h4>
 <p><a href="https://cyberbotics.com/doc/guide/introduction-to-webots">https://cyberbotics.com/doc/guide/introduction-to-webots</a></p>
@@ -519,7 +520,7 @@ set  path_webots=%Disk%:\Webots_2025a\msys64\mingw64\bin;%Disk%:\Webots_2025a\ms
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW1 - 學員學號</p>
 <hr/>
 <p>以下將利用 box 節點建立平面四連桿機構的模擬場景, 地面固定桿長度 1m, 寬高各為 0.1m, 第一桿長度 0.4m, 第二桿長度 0.6m, 第三桿長度 0.9m.</p>
-<p><span style="background-color: #00ff00;">Step1:</span> 在可攜程式套件中開啟 Webots - cmd 視窗中輸入 webotsw</p>
+<p><span style="background-color: #00ff00;">Step1:</span> 在可攜程式套件中開啟 Webots, 也就是在 cmd 視窗中輸入 webotsw</p>
 <p><span style="background-color: #00ff00;">Step2:</span> File - New - New Project Directory, 選擇 Y:\tmp\hw1 作為專案目錄, 建立 hw1.wbt, Add a rectangle arena 可以不用勾選</p>
 <p><span style="background-color: #00ff00;">Step3:</span> 若模擬已經開始, 按下 Pause the simulation 或透過 Ctrl + 0 暫停模擬, 利用 Reset simulation 或透過 Ctrl + Shift + t 讓模擬時間回到 t=0, 之後完成階段設定後, 必須讓模擬時間回到 t=0 之後才進行 hw1.wbt 的存檔</p>
 <p><span style="background-color: #00ff00;">Step4:</span> 確定 t=0 後, 按下 Save the current world file 或透過 Ctrl + Shift +s 儲存正在建立的 world 檔案, 之後利用 SciTE 開啟 Y:\tmp\hw1\worlds\hw1.wbt, 檔案內容如下:</p>
@@ -581,7 +582,19 @@ TexturedBackgroundLight {
   ]
 }
 </pre>
-<p></p><h2>HW2</h2>
+<p><span style="background-color: #00ff00;">Step7:</span> 由於 base 物件為 static, 也就是設定為不會移動的物體, 因此無需設定密度與質量等 physics 物理特性. 但在 base 物件上總共會設定兩個旋轉軸, 其一為主動軸 joint1 與被動軸 joint4.</p>
+<p>在 Webots 機電模型上, 物體上的轉動軸、移動軸或球接軸都必須與配置其上的物體在相同位階 (與 CoppeliaSim joint 設為子階的作法不同).</p>
+<p>因此在建立 joint1 時, 可以將滑鼠停在 base Solid 節點上, 然後新增一個 HingeJoint, DEF 為 joint1. 之後再新增一個 HingeJoint, DEF 為 joint4.</p>
+<p><span style="background-color: #00ff00;">Step8:</span> 點開 DEF joint1 HingeJoint 節點後, 其下有兩個用藍色圓形 icon 代表的"節點", 以及一個用棕色方形 icon 代表的"欄位".</p>
+<p>HingeJoint 其下的兩個節點名稱分別為 jointParameters 以及 endPoint, 初始對應物件都是 NULL, 代表沒有設定. 而欄位的名稱為 device, 可以加入煞車、感測器或致動器等裝置.</p>
+<p>首先雙點擊 jointParameters 節點, 以便加入節點參數, 其中包括指定 joint1 的 axis 向量以及旋轉中心座標 (即 anchor).</p>
+<p>接著雙點擊 device 欄位, 以便加入 RotationalMotor, 且將其 name 設定為 motor1</p>
+<p>最後可以透過雙點擊 endPoint 節點, 準備加入接在 joint1 上的 link1, 但是考量到設計標的中的 link1 是以 base 左端點座標旋轉, 但並非以該 link1 的中心點旋轉, 而是以 link1 的連桿端點旋轉, 因此當在 endPoint 建立 link1 所需的 Solid 節點之後, 除了 endPoint 所在的座標系統外 (該系統原點為 link1 的中心點), link1 還需要進行座標移動才能達成標的中的 link1 位置. 所以在 endPoint 從 NULL 改設定為 Solid 之後, 再接著建立 link1 所需的 Shape 節點之前, 必須先建立 Pose 節點, 以便在 link1 中心移動到 base 物件左邊端點之後, 再利用其 parent 節點 Pose 進行物件移動.</p>
+<p>所以操作步驟如下:</p>
+<p>雙點擊 endPoint 節點, 建立一個 Solid 節點 (因為準備將 link1 剛體接在 joint1 的旋轉端點上), DEF 設為 link1, 並在 Solid 的 children 節點上, 先建立一個 Pose 節點, 然後在 Pose 節點的 children 上才建立屬於 link1 的 Shape 節點. 並將此 Shape 節點 DEF 為 link1_shape 後, 於 geometry 節點處加入 box 節點.</p>
+<p>此時需要在場景中 show 出系統的座標系統, 以便用來設定 box 的尺寸, 因此透過下拉式功能表 View - Optional Rendering - Show Coordinate System 顯示出系統的座標系統.</p>
+<p>將 link1 的 Shape 幾何外行 box 尺寸設為 (0.4, 0.1, 0.1), 也就是 x 方向長度 0.4m, y 與 z 方向長度為 0.1m</p>
+<p>接著雙點擊 geometry Box 上方的 apperance 節點, 加入一個 Apperance 節點, 也就是所謂的物件外觀節點, 並在外觀節點的 apperance 節點上加入一個 Apperance 節點, 並在 material 節點加入 Material 節點. 如此便可以利用 Material 節點中的 diffuseColor 欄位設定 RGB 欄位中的顏色比例值. 最後請將 link1 外觀顏色設為紅色 (RGB: 1.0, 0, 0)</p><h2>HW2</h2>
 <p>HW2 (5%): <span style="background-color: #ffff00;">建立由 CAD 繪製零件組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 學員學號</p>
 <p></p>

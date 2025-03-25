@@ -163,6 +163,7 @@ set  path_webots=%Disk%:\Webots_2025a\msys64\mingw64\bin;%Disk%:\Webots_2025a\ms
 <p>由於 link1 最後需要透過碰撞檢測來與籃球互動, 因此除了 dynamic simulation 之外, 還需要設定 boundingObject, 才能界定 link1 的碰撞幾何外形, 但由於前面的 link1 並非在其 parent 座標系統的物件中心旋轉, 而是透過其局部座標轉換 (利用 pose 物件達成), 往局部 x 方向移動 0.2m, 因此 boundingObject 在引用其 shape 時, 也必須透過 pose 轉換到 link1 最終所在位置.</p>
 <p><span>上列流程所完成的 Webots 專案檔: </span><a href="https://localhost:9448/downloads/w6_demo_project.7z">w6_demo_project.7z</a> (joint on link1)</p>
 <p><a href="./../downloads/w6_joint_on_base_project.7z">w6_joint_on_base_project.7z</a> (joint on base)</p>
+<p></p>
 <p></p><br />w5 << <a href='w5.html'>Previous</a> <a href='task5.html'>Next</a> >> task5</div>
         
     <!-- footer -->
