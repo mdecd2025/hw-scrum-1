@@ -1,0 +1,350 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cd-scrum-1</title>
+        <meta charset="utf-8">
+<meta property="head" content="H3">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushMojo.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushWbt.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>cd2025 協同產品設計實習 Scrum-1 demo 網站</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">cd2025 協同產品設計實習 Scrum-1 demo 網站</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">SMap</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='AI.html'>AI</a></li></ul><li class='has-children'><a href='Tasks.html'>Tasks</a><ul class='dropdown'><li class='has-children'><a href='Wink.html'>Wink</a><ul class='dropdown'><li><a href='Fossil.html'>Fossil</a></li></ul><li class='has-children'><a href='task1.html'>task1</a><ul class='dropdown'><li><a href='list.html'>list</a></li></ul><li class='has-children'><a href='task2.html'>task2</a><ul class='dropdown'><li><a href='w3.html'>w3</a></li></ul><li><a href='task3.html'>task3</a><li class='has-children'><a href='task4.html'>task4</a><ul class='dropdown'><li><a href='w4.html'>w4</a><li><a href='w5.html'>w5</a><li><a href='w6.html'>w6</a></li></ul><li class='has-children'><a href='task5.html'>task5</a><ul class='dropdown'><li><a href='Webots.html'>Webots</a><li><a href='Deepbots.html'>Deepbots</a></li></ul><li><a href='task6.html'>task6</a></li></ul><li class='has-children'><a href='Homework.html'>Homework</a><ul class='dropdown'><li class='has-children'><a href='HW1.html'>HW1</a><ul class='dropdown'><li><a href='Tutorial1.html'>Tutorial1</a></li></ul><li><a href='HW2.html'>HW2</a><li><a href='HW3.html'>HW3</a></li></ul><li><a href='Midterm.html'>Midterm</a><li class='has-children'><a href='Exam.html'>Exam</a><ul class='dropdown'><li><a href='Exam1.html'>Exam1</a><li><a href='Exam2.html'>Exam2</a><li><a href='Exam3.html'>Exam3</a></li></ul><li><a href='Final.html'>Final</a><li><a href='Brython.html'>Brython</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">HW1 << <a href='HW1.html'>Previous</a> <a href='HW2.html'>Next</a> >> HW2<br /><h1>Tutorial1</h1>
+<p><a href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots">https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots</a></p>
+<h4 class="anchor-header" id="tutorial1yourfirstsimulationinwebots30minutes" name="tutorial-1-your-first-simulation-in-webots-30-minutes">Tutorial 1: Your First Simulation in Webots (30 Minutes)</h4>
+<p>The objective of this first tutorial is to familiarize yourself with the user interface and with the basic concepts of Webots. You will create your first simulation containing a simple environment: an arena with floor and walls, a few boxes, an e-puck robot and a controller program that will make the robot move.</p>
+<figure name="what-you-should-see-at-the-end-of-the-first-tutorial"><img alt="tutorial_e-puck.png" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/tutorial_e-puck.thumbnail.jpg"/>
+<figcaption class="anchor-header"><a class="anchor-link" href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#what-you-should-see-at-the-end-of-the-first-tutorial"><span class="anchor-link-image"></span></a>What you should see at the end of the first tutorial.</figcaption>
+</figure>
+<h4 id="indexTitle">Index</h4>
+<ul id="index">
+<li><a href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#start-webots">Start Webots</a></li>
+<li><a href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#create-a-new-world">Create a New World</a></li>
+<li><a href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#add-an-e-puck-robot">Add an e-puck Robot</a></li>
+<li><a href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#create-a-new-controller">Create a New Controller</a></li>
+<li><a href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#extend-the-controller-to-speed-control">Extend the Controller to Speed Control</a></li>
+<li><a href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#conclusion">Conclusion</a></li>
+</ul>
+<h4 class="anchor-header" id="startwebots" name="start-webots"><a class="anchor-link" href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#start-webots"><span class="anchor-link-image"></span></a>Start Webots</h4>
+<p>If not already done, download and install Webots, following these <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/installing-webots">installation instructions</a>.</p>
+<blockquote>
+<p><strong>Hands-on #1</strong>: <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/starting-webots">Start Webots</a> by double-clicking on its icon (or invoking it from a command line in a Terminal). If you are running Webots for the first time on this computer, you may be prompted to select a graphical theme. You may also be invited to follow the Webots guided tour, go ahead and close the guided tour.</p>
+</blockquote>
+<p>If you never saw it, please take some time to view the demos featured in the guided tour. They are telling a lot about the possibilities of Webots. The guided tour is also available from the <em>Help</em> menu of Webots.</p>
+<h4 class="anchor-header" id="createanewworld" name="create-a-new-world"><a class="anchor-link" href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#create-a-new-world"><span class="anchor-link-image"></span></a>Create a New World</h4>
+<p>A <strong>World</strong> is a file containing information like where the objects are, what they look like, how they interact with each other, what is the color of the sky, and the definitions of gravity, friction, masses of the objects, etc. It defines the initial state of a simulation. The different objects are called <strong>Nodes</strong> and are organized hierarchically in a <strong>Scene Tree</strong>. Therefore, a node may contain sub-nodes. A world is stored in a file having the <code>.wbt</code> extension. The file format is derived from the <strong>VRML97</strong> language, and is human readable. The world files must be stored directly in a directory called <code>worlds</code>.</p>
+<blockquote>
+<p><strong>Hands-on #2</strong>: Pause the current simulation by clicking on the <code>Pause</code> button <img alt="" height="26" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/pause-button.png" width="26"/> of the 3D view (see the <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/the-user-interface#simulation-menu">user interface description</a> to find out the buttons). The simulation is paused if the virtual time counter on the main toolbar is stopped. Create a new project from the <strong>File / New / New Project Directory...</strong> menu item and follow the instructions:</p>
+<ol>
+<li>Name the project directory <code>my_first_simulation</code> instead of the proposed <code>my_project</code>.</li>
+<li>Name the world file <code>my_first_simulation.wbt</code> instead of the proposed <code>empty.wbt</code>.</li>
+<li>Click all the tick boxes, including the "Add a rectangle arena" which is not ticked by default.</li>
+</ol>
+</blockquote>
+<p>Webots displays a list of directories and files it just created. This corresponds to the <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/the-standard-file-hierarchy-of-a-project">standard file hierarchy of a Webots project</a>. Click on the <code>Finish</code> (Windows, Linux) or <code>Done</code> (macOS) button to close this window.</p>
+<p>Congratulations, you just created your very first Webots world! The 3D view should display a square arena with a checkered floor. You can move the viewpoint in the 3D view <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/the-3d-window#navigation-in-the-scene">using the mouse</a>: left button, right button and the wheel.</p>
+<p>Webots nodes stored in world files are organized in a tree structure called the <strong>scene tree</strong>. The scene tree can be viewed in two sub-windows of the main window: the <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/the-3d-window">3D view</a> (at the center of the main window) is the 3D representation of the scene tree and the <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/the-scene-tree">scene tree view</a> (on the left) is the hierarchical representation of the scene tree. The <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/the-scene-tree">scene tree view</a> is where the nodes and fields can be modified. It should currently list the following nodes:</p>
+<ul>
+<li><a href="https://cyberbotics.com/doc/reference/worldinfo">WorldInfo</a>: contains global parameters of the simulation.</li>
+<li><a href="https://cyberbotics.com/doc/reference/viewpoint">Viewpoint</a>: defines the main viewpoint camera parameters.</li>
+<li><a href="https://webots.cloud/run?url=https://github.com/cyberbotics/webots/blob/released/projects/objects/backgrounds/protos/TexturedBackground.proto" target="_blank">TexturedBackground</a>: defines the background of the scene (you should see mountains far away if you rotate a little bit the viewpoint)</li>
+<li><a href="https://webots.cloud/run?url=https://github.com/cyberbotics/webots/blob/released/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto" target="_blank">TexturedBackgroundLight</a>: defines the light associated with the above background.</li>
+<li><a href="https://webots.cloud/run?url=https://github.com/cyberbotics/webots/blob/released/projects/objects/floors/protos/RectangleArena.proto" target="_blank">RectangleArena</a>: define the only object you see so far in this scene.</li>
+</ul>
+<p>Each node has some customizable properties called <strong>Fields</strong>. Let's modify these fields to change the rectangle arena:</p>
+<blockquote>
+<p><strong>Hands-on #3</strong>: Double-click on the <code>RectangleArena</code> node in the scene tree. This should open the node and display its fields.</p>
+<ol>
+<li>Select the <code>floorTileSize</code> field and set its value to <code>0.25 0.25</code> instead of <code>0.5 0.5</code>. You should see the effect immediately in the 3D view.</li>
+<li>Select the <code>wallHeight</code> field and change its value to <code>0.05</code> instead of <code>0.1</code>. The wall of the arena should now be lower.</li>
+</ol>
+</blockquote>
+<p>In the <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/the-scene-tree">scene tree view</a>, the fields are displayed in a different color (depending on the theme) if they differ from their default values. Now, we would like to add some objects:</p>
+<blockquote>
+<p><strong>Hands-on #4</strong>: Double-click on the <code>RectangleArena</code> in the scene tree to close it and select it. Click on the <code>Add</code> button <img alt="" height="26" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/add-button.png" width="26"/> at the top of the scene tree. In the open dialog box, choose <code>PROTO nodes (Webots Projects) / objects / factory / containers / WoodenBox (Solid)</code>. A big box should appear in the middle of the arena. Double-click on it in the scene tree to open its fields.</p>
+<ol>
+<li>Change its <code>size</code> to <code>0.1 0.1 0.1</code> instead of <code>0.6 0.6 0.6</code>.</li>
+<li>Change its <code>translation</code> to <code>0 0 0.05</code> instead of <code>0 0 0.3</code>. Alternatively, you may use the blue arrow that appears in the 3D view to adjust its <code>translation.z</code> field.</li>
+<li>Now shift-click and drag the box in the 3D view and move it in some corner of the arena.</li>
+<li>Select the box and press <kbd>ctrl</kbd>-<kbd>C</kbd>, <kbd>ctrl</kbd>-<kbd>V</kbd> (Windows, Linux) or <kbd>⌘ command</kbd>-<kbd>C</kbd>, <kbd>⌘ command</kbd>-<kbd>V</kbd> (macOS) to copy and paste it. Shift-click and drag the new box to move it at some different location. Create a third box this way.</li>
+<li>Move the boxes, so that no box is at the center of the arena. You may also use the blue rotation arrows to rotate the boxes along the vertical axis. This can be done also by shift-click and drag with the right mouse button. Alternatively, you can change the angle of the <code>rotation</code> field of the <code>WoodenBox</code> nodes in the scene tree.</li>
+<li>Once you are satisfied with the result, save the world using the save button.</li>
+</ol>
+</blockquote>
+<p>Using the translation and rotation handles to move objects is explained in <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/the-3d-window#axis-aligned-handles">this section</a>.</p>
+<h4 class="anchor-header" id="addanepuckrobot" name="add-an-e-puck-robot"><a class="anchor-link" href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#add-an-e-puck-robot"><span class="anchor-link-image"></span></a>Add an e-puck Robot</h4>
+<p>The e-puck is a small robot having differential wheels, 10 <a href="https://cyberbotics.com/doc/reference/led">LEDs</a>, and several sensors including 8 <a href="https://cyberbotics.com/doc/reference/distancesensor">DistanceSensors</a> and a <a href="https://cyberbotics.com/doc/reference/camera">Camera</a>. In this tutorial we are only interested in using its wheels. We will learn how to use other capabilities in the next tutorials.</p>
+<p>Now, we are going to add an e-puck model to the world. Make sure that the simulation is paused and that the virtual time elapsed is 0. If this is not the case, reset the simulation with the <code>Reset</code> button <img alt="" height="26" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/reset-simulation-button.png" width="26"/>.</p>
+<p>When a Webots world is modified with the intention of being saved, it is fundamental that the simulation is first paused and reloaded to its initial state, i.e. the virtual time counter on the main toolbar should show 0:00:00:000. Otherwise at each save, the position of each 3D object can accumulate errors. Therefore, any modification of the world should be performed in that order: <strong>pause, reset, modify and save the simulation</strong>.</p>
+<p>We don't need to create the e-puck robot from scratch, we will just have to import a <code>E-puck</code> node. This node is actually a <a href="https://cyberbotics.com/doc/reference/proto">PROTO</a> node, like the <code>RectangleArena</code> or the <code>WoodenBox</code> we introduced before. Prototyping allows you to create custom objects and to reuse them.</p>
+<blockquote>
+<p><strong>Hands-on #5</strong>: Select the last node <code>WoodenBox</code> of the scene tree view. Click on the <code>Add</code> button <img alt="" height="26" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/add-button.png" width="26"/> at the top of the scene tree view. In the dialog box, choose <code>PROTO nodes (Webots Projects) / robots / gctronic / e-puck / E-puck (Robot)</code>. An e-puck robot should appear in the middle of the arena. Move and rotate this robot, the same way you did it with the boxes. Save the simulation and press the <code>Run real-time</code> button <img alt="" height="26" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/realtime-button.png" width="26"/>.</p>
+</blockquote>
+<p>The robot should move, blink LEDs and avoid obstacles. That's because it has a default controller with that behavior. You may have noticed a small black window appearing in the upper-left corner of the 3D view. It shows the image taken by the <a href="https://cyberbotics.com/doc/reference/camera">Camera</a> of the e-puck robot. This image will remain black until the camera is explicitly enabled by the controller of the robot. This small image window can be <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/the-3d-window#moving-and-resizing-overlays">moved</a> around by dragging it. It can also be <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/the-3d-window#moving-and-resizing-overlays">resized</a> by dragging the bottom-right corner. Finally, it can be closed by clicking the "x" in the top-right corner. You can make it visible again from the <strong>Overlays</strong> menu, by selecting it in the <strong>Camera Devices</strong> submenu. Because we won't need it, you can actually close it.</p>
+<p>Now, while the simulation is running, let's play with the physics:</p>
+<blockquote>
+<p><strong>Hands-on #6</strong>: <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/the-3d-window#applying-a-force-to-a-solid-object-with-physics">Apply a force</a> to the robot by pressing <kbd>alt</kbd> <em>+ left-click + drag</em> (use the <kbd>⌥ option</kbd> key on some Mac keyboards). On Linux, you should also press the <kbd>ctrl</kbd> key in addition to <kbd>alt</kbd> <em>+ left-click + drag</em>. It is not possible to apply a force to a <code>WoodenBox</code> node, because by default, they have no mass and are considered as glued on the floor. To enable physics on the <code>WoodenBox</code> nodes, you should set their <code>mass</code> field to a certain value (for example 0.2 kg). Once this is done, should be able to apply a force on them as well.</p>
+</blockquote>
+<p>The simulation may be paused <img alt="" height="26" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/pause-button.png" width="26"/>, run step-by-step <img alt="" height="26" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/step-button.png" width="26"/>, in real time <img alt="" height="26" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/realtime-button.png" width="26"/> or in fast <img alt="" height="26" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/fast-button.png" width="26"/> modes.</p>
+<p>Now we are going to modify the world and decrease the step of the physics simulation: this will increase the accuracy and stability of the simulation (but reduce the maximum simulation speed).</p>
+<blockquote>
+<p><strong>Hands-on #7</strong>: Pause the simulation and revert it. In the Scene Tree view, expand the <a href="https://cyberbotics.com/doc/reference/worldinfo">WorldInfo</a> node (the first node). Set its <code>basicTimeStep</code> field to <em>16</em>. Then save the simulation.</p>
+</blockquote>
+<h4 class="anchor-header" id="createanewcontroller" name="create-a-new-controller"><a class="anchor-link" href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#create-a-new-controller"><span class="anchor-link-image"></span></a>Create a New Controller</h4>
+<p>We will now program a simple controller that will just make the robot move forwards.</p>
+<p>A <strong>controller</strong> is a program that defines the behavior of a robot. Webots controllers can be written in the following programming languages: C, C++, Java, Python, MATLAB, etc. C, C++ and Java controllers need to be compiled before they can be run as robot controllers. Python and MATLAB controllers are interpreted languages so they will run without being compiled. In this tutorial, we are going to use C as a reference language but all the code snippets are also available in C++, Java, Python and MATLAB. Refer to the <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/language-setup">language chapter</a> to setup a controller using a different programming language.</p>
+<p>The <code>controller</code> field of a <code>Robot</code> node specifies which controller is currently associated to the robot. Note that the same controller can be used by several robots, but a robot can only use one controller at a time. Each controller is executed in a separate child process usually spawned by Webots. Because they are independent processes, controllers don't share the same address space, and may run on different processor cores.</p>
+<blockquote>
+<p><strong>Hands-on #8</strong>: Create a new C (or any other language) controller called <code>epuck_go_forward</code> (for C++ and Java call it <code>EPuckGoForward</code> instead) using the <strong>File / New / New Robot Controller...</strong> menu item. This will create a new <code>epuck_go_forward</code> (or <code>EPuckGoForward</code>) directory in <code>my_first_simulation/controllers</code>. Select the option offering you to open the source file in the text editor.</p>
+</blockquote>
+<p>The new source file is displayed in Webots text editor window. This source file may be compiled (if written in C, C++ or Java) without any modification, however the current code has no real effect. We will now associate new <code>epuck_go_forward</code> (or <code>EPuckGoForward</code>) controller to the <code>E-puck</code> node.</p>
+<div class="tab-component" tabid="1"></div>
+<div class="tab-content" name="python" style="display: block;" tabid="1">
+<blockquote>
+<p><strong>Hands on #9</strong>: In the scene tree view, select the <code>controller</code> field of the <code>E-puck</code> node, then use the field editor at the bottom of the Scene Tree view: press the <code>Select...</code> button and then select <code>epuck_go_forward</code> in the list. Once the controller is associated with the robot, save the world. Modify the program by getting the motor devices (<code>leftMotor = robot.getDevice('left wheel motor')</code>), and by applying a motor command (<code>leftMotor.setPosition(10.0)</code>):</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Motor
+
+TIME_STEP = 64
+
+# create the Robot instance.
+robot = Robot()
+
+# get the motor devices
+leftMotor = robot.getDevice('left wheel motor')
+rightMotor = robot.getDevice('right wheel motor')
+# set the target position of the motors
+leftMotor.setPosition(10.0)
+rightMotor.setPosition(10.0)
+
+while robot.step(TIME_STEP) != -1:
+   pass
+</pre>
+<p>Save the modified source code (<code>File / Save Text File</code>), reset and run the simulation.</p>
+</blockquote>
+</div>
+<p>If everything is fine, your robot should move forwards. The robot will move using its maximum speed for a while and then stop once the wheels have rotated of 10 radians.</p>
+<p>In the <code>controllers</code> directory of your project, a directory containing the <code>epuck_go_forward</code> (or <code>EPuckGoForward</code>) controller has been created. The <code>epuck_go_forward</code> (or <code>EPuckGoForward</code>) directory contains a <code>epuck_go_forward</code> (or <code>EPuckGoForward</code>) binary file generated after the compilation of the controller (on Windows, this file has the <code>.exe</code> extension). The controller directory name should match with the binary name.</p>
+<h4 class="anchor-header" id="extendthecontrollertospeedcontrol" name="extend-the-controller-to-speed-control"><a class="anchor-link" href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#extend-the-controller-to-speed-control"><span class="anchor-link-image"></span></a>Extend the Controller to Speed Control</h4>
+<p>The robots wheels are often controlled using velocity, and not position like we did in the previous example. In order to control the motors of the wheels in speed you need to set the target position to the infinity and to set the desired speed:</p>
+<div class="tab-component" tabid="2"></div>
+<div class="tab-content" name="c" style="display: block;" tabid="2">
+<blockquote>
+<p><strong>Hands-on #10</strong>: Modify the controller program as shown below, recompile it and run it:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Motor
+
+TIME_STEP = 64
+
+MAX_SPEED = 6.28
+
+# create the Robot instance.
+robot = Robot()
+
+# get a handler to the motors and set target position to infinity (speed control)
+leftMotor = robot.getDevice('left wheel motor')
+rightMotor = robot.getDevice('right wheel motor')
+leftMotor.setPosition(float('inf'))
+rightMotor.setPosition(float('inf'))
+
+# set up the motor speeds at 10% of the MAX_SPEED.
+leftMotor.setVelocity(0.1 * MAX_SPEED)
+rightMotor.setVelocity(0.1 * MAX_SPEED)
+
+while robot.step(TIME_STEP) != -1:
+   pass</pre>
+</blockquote>
+</div>
+<p>The robot will now move (the wheels will rotate at a speed of 0.2 radian per second) and never stop. If nothing happens, don't forget to compile your code by selecting the <code>Build / Build</code> menu item or clicking on the gear icon <img alt="" height="26" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/build-button.png" width="26"/> above the code area. Compilation errors are displayed in red in the console. If there are any, fix them and retry to compile. Then, reload the world.</p>
+<h4 class="anchor-header" id="conclusion" name="conclusion"><a class="anchor-link" href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#conclusion"><span class="anchor-link-image"></span></a>Conclusion</h4>
+<p>We hope you enjoyed creating your first Webots simulation. You have been able to set up a world, add a robot and program it. The important thing is that you learned the fundamental concepts summarized below:</p>
+<ul>
+<li>A world is made up of nodes organized in a tree structure.</li>
+<li>A world is saved in a <code>.wbt</code> file stored in a Webots project.</li>
+<li>The project also contains the robot controller programs which define the behavior of the robots.</li>
+<li>Controllers may be written in C or other languages.</li>
+<li>C, C++ and Java controllers have to be explicitly compiled before they can be executed.</li>
+<li>Controllers are associated with robots via the <code>controller</code> fields of the <code>Robot</code> node.</li>
+</ul>
+<p></p><br />HW1 << <a href='HW1.html'>Previous</a> <a href='HW2.html'>Next</a> >> HW2</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
