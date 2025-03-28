@@ -598,7 +598,7 @@ TexturedBackgroundLight {
 <p>所以操作步驟如下:</p>
 <p>雙點擊 endPoint 節點, 建立一個 Solid 節點 (因為準備將 link1 剛體接在 joint1 的旋轉端點上), DEF 設為 link1, 並在 Solid 的 children 節點上, 先建立一個 <a href="https://cyberbotics.com/doc/reference/pose">Pose</a> 節點, 然後在 <a href="https://cyberbotics.com/doc/reference/pose">Pose</a> 節點的 children 上再建立屬於 link1 的 Shape 節點. 並將此 Shape 節點 DEF 為 link1_shape 後, 於 geometry 節點處加入 box 節點.</p>
 <p>此時需要在場景中 show 出系統的座標系統, 以便用來設定 box 的尺寸, 因此透過下拉式功能表 View - Optional Rendering - Show Coordinate System 顯示出系統的座標系統.</p>
-<p>將 link1 的 Shape 幾何外行 box 尺寸設為 (0.4, 0.1, 0.1), 也就是 x 方向長度 0.4m, y 與 z 方向長度為 0.1m</p>
+<p>將 link1 的 Shape 幾何外形 box 尺寸設為 (0.4, 0.1, 0.1), 也就是 x 方向長度 0.4m, y 與 z 方向長度為 0.1m</p>
 <p>接著雙點擊 geometry Box 上方的 apperance 節點, 加入一個 Apperance 節點, 也就是所謂的物件外觀節點, 並在外觀節點的 apperance 節點上加入一個 Apperance 節點, 並在 material 節點加入 Material 節點. 如此便可以利用 Material 節點中的 diffuseColor 欄位設定 RGB 欄位中的顏色比例值. 最後請將 link1 外觀顏色設為紅色 (RGB: 1.0, 0, 0)</p>
 <p><span style="background-color: #00ff00;">Step9:</span> 從下列場景的樹狀結構, 可以發現 Robot、base 與 joint1 所依據的座標系統都相同, 且位於 base link 的中心點. 此時在 joint1 的 endPoint 欄位加入 link1 Solid 之後, 其座標原點也是位於 base link 的中心點, 由於 link1 必須移動至 base link 的左邊端點, 而 joint1 的旋轉中心點座標與旋轉向量, 則可以透過 jointParameters 中的 anchor 與 axis 欄位進行設定.</p>
 <p><img alt="" height="505" src="/images/hw1_step9.png" width="346"/></p>
@@ -651,7 +651,7 @@ def run_robot():
 if __name__ == "__main__":
     run_robot()</pre>
 <p><a href="/downloads/hw1.7z">hw1.7z</a></p>
-<p><a href="/downloads/w6_2a_hw1.7z">w6_2a_hw1.7z</a> (課堂上 demo, 利用 material - Material - transparency 設為 1 隱藏, 各 links 的 physics 與 boundingObject 均要具備, 且 joint4 的 anchor (旋轉中心點) 與 axis (旋轉軸向量) 與各 joints 都要指定)</p><h3>Tutorial1</h3>
+<p><a href="/downloads/w6_2a_hw1.7z">w6_2a_hw1.7z</a> (課堂上 demo, base 連桿利用 material - Material - transparency 設為 1 隱藏, 其餘各 links 的 physics 與 boundingObject 均要具備, 且 joint4 的 anchor (旋轉中心點) 與 axis (旋轉軸向量) 也要指定)</p><h3>Tutorial1</h3>
 <p><a href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots">https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots</a></p>
 <h4 class="anchor-header" id="tutorial1yourfirstsimulationinwebots30minutes" name="tutorial-1-your-first-simulation-in-webots-30-minutes">Tutorial 1: Your First Simulation in Webots (30 Minutes)</h4>
 <p>The objective of this first tutorial is to familiarize yourself with the user interface and with the basic concepts of Webots. You will create your first simulation containing a simple environment: an arena with floor and walls, a few boxes, an e-puck robot and a controller program that will make the robot move.</p>
