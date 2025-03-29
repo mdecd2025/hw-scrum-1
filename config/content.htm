@@ -18,7 +18,11 @@
 <p style="padding-left: 30px;">Final Report (30%) - 利用網頁內容進行簡報並提交 pdf 格式書面報告, 完成後填回自評表單</p>
 <h2>AI</h2>
 <p></p>
-<h1>Tasks</h1>
+<h2>Server</h2>
+<p>35 - 5j - win10 - Intel(R) Xeon(R) E-2236 CPU @ 3.40GHz   3.41 GHz</p>
+<p>1000 - E5200 - win10 - Pentium(R) Dual-Core CPU E5200 @ 2.50GHz</p>
+<p>9001 - 91 - 9089 - ubuntu - Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz</p>
+<p>9002 - 91 - 9089 - win10 - Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz</p><h1>Tasks</h1>
 <p>task1 與 task2 任務目的在建立可於近端維護個人作業與協同作業的準備工作:</p>
 <p style="padding-left: 30px;">task1 (自行製作可攜程式系統)</p>
 <p style="padding-left: 30px;">task2 (使用 SSH 協定執行作業倉儲的推送)</p>
@@ -28,8 +32,7 @@
 <p>task5 與 task6 則為 HW3 的主要內容</p>
 <p style="padding-left: 30px;">task5 (Webots Tutorial 1 ~3)</p>
 <p style="padding-left: 30px;">task6 (Webots Tutorial 4 ~6)</p>
-<p></p>
-<h2>Wink</h2>
+<p></p><h2>Wink</h2>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;!-- 假如檔案小於 5mb, 將 mp4 檔案放入 downloads 目錄後取出 --&gt;
 &lt;div class="winkVideoContainerClass"&gt;&lt;video width="1008" height="630" autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="your_video_unique_name" muted="true"&gt;
 &lt;source src="/downloads/your_video.mp4" type="video/mp4" /&gt;&lt;/video&gt;&lt;/div&gt;</pre>
@@ -655,6 +658,7 @@ if __name__ == "__main__":
 <p><a href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots">https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots</a></p>
 <h4 class="anchor-header" id="tutorial1yourfirstsimulationinwebots30minutes" name="tutorial-1-your-first-simulation-in-webots-30-minutes">Tutorial 1: Your First Simulation in Webots (30 Minutes)</h4>
 <p>The objective of this first tutorial is to familiarize yourself with the user interface and with the basic concepts of Webots. You will create your first simulation containing a simple environment: an arena with floor and walls, a few boxes, an e-puck robot and a controller program that will make the robot move.</p>
+<p>第一個教學導引的目的, 是讓使用者熟悉 Webots 的使用者介面與基本概念. 如下圖所示, 此導引所創建的模擬場景包含一個簡單的場景: 帶有地板與圍牆的競技場、幾個箱子、一個 e-puck 機器人和一個能控制機器人移動的程式.</p>
 <figure name="what-you-should-see-at-the-end-of-the-first-tutorial"><img alt="tutorial_e-puck.png" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/tutorial_e-puck.thumbnail.jpg"/>
 <figcaption class="anchor-header"><a class="anchor-link" href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#what-you-should-see-at-the-end-of-the-first-tutorial"><span class="anchor-link-image"></span></a>What you should see at the end of the first tutorial.</figcaption>
 </figure>
@@ -675,6 +679,8 @@ if __name__ == "__main__":
 <p>If you never saw it, please take some time to view the demos featured in the guided tour. They are telling a lot about the possibilities of Webots. The guided tour is also available from the <em>Help</em> menu of Webots.</p>
 <h4 class="anchor-header" id="createanewworld" name="create-a-new-world"><a class="anchor-link" href="https://cyberbotics.com/doc/guide/tutorial-1-your-first-simulation-in-webots?tab-language=python#create-a-new-world"><span class="anchor-link-image"></span></a>Create a New World</h4>
 <p>A <strong>World</strong> is a file containing information like where the objects are, what they look like, how they interact with each other, what is the color of the sky, and the definitions of gravity, friction, masses of the objects, etc. It defines the initial state of a simulation. The different objects are called <strong>Nodes</strong> and are organized hierarchically in a <strong>Scene Tree</strong>. Therefore, a node may contain sub-nodes. A world is stored in a file having the <code>.wbt</code> extension. The file format is derived from the <strong>VRML97</strong> language, and is human readable. The world files must be stored directly in a directory called <code>worlds</code>.</p>
+<p>這裡所謂的 World 是一個文件檔案, 其中包含物件所在位置、外觀、以及如何與環境及其他物件進行相互作用、天空的顏色與重力、摩擦力、物件質量等資訊. 此外, 文件中還定義了模擬的初始狀態.</p>
+<p>模擬場景中的各個物件稱為節點, 採樹狀架構排列. 其中的節點可以包含子節點. 模擬場景的檔案副檔名為 .wbt, 也就是 webots 中取 wbt 三個字母所組成. 該文件格式源自 VRML97 語言, 內容為明碼, 可以直接由文字編輯器讀取或編輯. 模擬場景檔案則規定必須儲存在名稱為 worlds 的目錄中.</p>
 <blockquote>
 <p><strong>Hands-on #2</strong>: Pause the current simulation by clicking on the <code>Pause</code> button <img alt="" height="26" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/pause-button.png" width="26"/> of the 3D view (see the <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/the-user-interface#simulation-menu">user interface description</a> to find out the buttons). The simulation is paused if the virtual time counter on the main toolbar is stopped. Create a new project from the <strong>File / New / New Project Directory...</strong> menu item and follow the instructions:</p>
 <ol>
@@ -694,14 +700,19 @@ if __name__ == "__main__":
 <li><a href="https://webots.cloud/run?url=https://github.com/cyberbotics/webots/blob/released/projects/objects/floors/protos/RectangleArena.proto" target="_blank">RectangleArena</a>: define the only object you see so far in this scene.</li>
 </ul>
 <p>Each node has some customizable properties called <strong>Fields</strong>. Let's modify these fields to change the rectangle arena:</p>
+<p>每一個節點都帶有可以自行設定的屬性稱為欄位.</p>
 <blockquote>
-<p><strong>Hands-on #3</strong>: Double-click on the <code>RectangleArena</code> node in the scene tree. This should open the node and display its fields.</p>
+<p><strong>Hands-on #3</strong>: Double-click on the <code>RectangleArena</code> node in the scene tree. This should open the node and display its fields. (雙點擊各節點可以帶出其特定的欄位)</p>
 <ol>
 <li>Select the <code>floorTileSize</code> field and set its value to <code>0.25 0.25</code> instead of <code>0.5 0.5</code>. You should see the effect immediately in the 3D view.</li>
 <li>Select the <code>wallHeight</code> field and change its value to <code>0.05</code> instead of <code>0.1</code>. The wall of the arena should now be lower.</li>
 </ol>
 </blockquote>
 <p>In the <a class="dynamicLoad" href="https://cyberbotics.com/doc/guide/the-scene-tree">scene tree view</a>, the fields are displayed in a different color (depending on the theme) if they differ from their default values. Now, we would like to add some objects:</p>
+<p>當欄位值與其內定值不同時, 將以不同的顏色進行標示.</p>
+<p>按下 shift+滑鼠左鍵, 可以移動物件.</p>
+<p>選擇物件後, 可以用 Ctrl + C 複製該物件, 然後以 Ctrl + V 貼上該複製的物件, 然後再利用 Ctrl + 滑鼠左鍵移動物件.</p>
+<p>選擇物件後, 出現位於物件中心點的座標向量與旋轉標示, 可以用滑鼠點選後可以利用向量進行單一方向的移動或利用旋轉標示旋轉物件.</p>
 <blockquote>
 <p><strong>Hands-on #4</strong>: Double-click on the <code>RectangleArena</code> in the scene tree to close it and select it. Click on the <code>Add</code> button <img alt="" height="26" src="https://raw.githubusercontent.com/cyberbotics/webots/released/docs/guide/images/add-button.png" width="26"/> at the top of the scene tree. In the open dialog box, choose <code>PROTO nodes (Webots Projects) / objects / factory / containers / WoodenBox (Solid)</code>. A big box should appear in the middle of the arena. Double-click on it in the scene tree to open its fields.</p>
 <ol>
