@@ -258,38 +258,27 @@ def doDelete():
 
 
 @app.route('/doAcp', methods=['POST'])
-@app.route('/doAcp', methods=['POST'])
 def doAcp():
-    """Action to execute actForm inputs"""
-    
+
+    """Action to execute actForm inputs
+    """
+
     if not isAdmin():
         return redirect("/login")
-    
-    commit_messages = request.form['commit']
-    head, level, page = parse_content()
-    directory = render_menu(head, level, page)
-    
-    try:
-        # Execute acp.bat with commit_messages
-        result = None
+    else:
+        commit_messages = request.form['commit']
+        head, level, page = parse_content()
+        directory = render_menu(head, level, page)
+        # execute acp.bat with commit_messages
         if os.name == 'nt':
-            result = subprocess.run(["acp.bat", commit_messages], 
-                                   check=True, 
-                                   capture_output=True,
-                                   text=True)
+            os.system("acp.bat \"" + commit_messages + "\"")
         else:
-            result = subprocess.run(["./acp", commit_messages], 
-                                   check=True,
-                                   capture_output=True,
-                                   text=True)
-        
-        return set_css() + "<div class='container'><nav>" + \
-               directory + "</nav><section><h1>Acp done</h1>Acp done<br><pre>" + \
-               result.stdout + "</pre></section></div></body></html>"
-    
-    except subprocess.CalledProcessError as e:
-        error_output = e.stdout + "\n" + e.stderr if hasattr(e, 'stdout') and hasattr(e, 'stderr') else str(e)
-        return set_css() + f"<div class='container'><nav>{directory}</nav><section><h1>Error</h1><pre>{error_output}</pre></section></div></body></html>"
+            os.system("./acp \"" + commit_messages + "\"")
+
+        return set_css() + "<div class='container'><nav>"+ \
+                   directory + "</nav><section><h1>Acp done</h1>Acp done</section></div></body></html>"
+
+
 @app.route('/doSearch', methods=['POST'])
 def doSearch():
 

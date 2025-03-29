@@ -10691,38 +10691,27 @@ def acpform():
 
 </t>
 <t tx="leo.20221017090933.1">@app.route('/doAcp', methods=['POST'])
-@app.route('/doAcp', methods=['POST'])
 def doAcp():
-    """Action to execute actForm inputs"""
-    
+
+    """Action to execute actForm inputs
+    """
+
     if not isAdmin():
         return redirect("/login")
-    
-    commit_messages = request.form['commit']
-    head, level, page = parse_content()
-    directory = render_menu(head, level, page)
-    
-    try:
-        # Execute acp.bat with commit_messages
-        result = None
+    else:
+        commit_messages = request.form['commit']
+        head, level, page = parse_content()
+        directory = render_menu(head, level, page)
+        # execute acp.bat with commit_messages
         if os.name == 'nt':
-            result = subprocess.run(["acp.bat", commit_messages], 
-                                   check=True, 
-                                   capture_output=True,
-                                   text=True)
+            os.system("acp.bat \"" + commit_messages + "\"")
         else:
-            result = subprocess.run(["./acp", commit_messages], 
-                                   check=True,
-                                   capture_output=True,
-                                   text=True)
-        
-        return set_css() + "&lt;div class='container'&gt;&lt;nav&gt;" + \
-               directory + "&lt;/nav&gt;&lt;section&gt;&lt;h1&gt;Acp done&lt;/h1&gt;Acp done&lt;br&gt;&lt;pre&gt;" + \
-               result.stdout + "&lt;/pre&gt;&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
-    
-    except subprocess.CalledProcessError as e:
-        error_output = e.stdout + "\n" + e.stderr if hasattr(e, 'stdout') and hasattr(e, 'stderr') else str(e)
-        return set_css() + f"&lt;div class='container'&gt;&lt;nav&gt;{directory}&lt;/nav&gt;&lt;section&gt;&lt;h1&gt;Error&lt;/h1&gt;&lt;pre&gt;{error_output}&lt;/pre&gt;&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
+            os.system("./acp \"" + commit_messages + "\"")
+
+        return set_css() + "&lt;div class='container'&gt;&lt;nav&gt;"+ \
+                   directory + "&lt;/nav&gt;&lt;section&gt;&lt;h1&gt;Acp done&lt;/h1&gt;Acp done&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
+
+
 </t>
 <t tx="leo.20221017090940.1">add acpForm and doAcp</t>
 <t tx="leo.20230426201753.1"></t>
