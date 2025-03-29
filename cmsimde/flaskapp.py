@@ -258,6 +258,7 @@ def doDelete():
 
 
 @app.route('/doAcp', methods=['POST'])
+@app.route('/doAcp', methods=['POST'])
 def doAcp():
     """Action to execute actForm inputs"""
     
@@ -270,18 +271,25 @@ def doAcp():
     
     try:
         # Execute acp.bat with commit_messages
+        result = None
         if os.name == 'nt':
-            subprocess.run(["acp.bat", commit_messages], check=True)
+            result = subprocess.run(["acp.bat", commit_messages], 
+                                   check=True, 
+                                   capture_output=True,
+                                   text=True)
         else:
-            subprocess.run(["./acp", commit_messages], check=True)
+            result = subprocess.run(["./acp", commit_messages], 
+                                   check=True,
+                                   capture_output=True,
+                                   text=True)
         
         return set_css() + "<div class='container'><nav>" + \
-               directory + "</nav><section><h1>Acp done</h1>Acp done</section></div></body></html>"
+               directory + "</nav><section><h1>Acp done</h1>Acp done<br><pre>" + \
+               result.stdout + "</pre></section></div></body></html>"
     
     except subprocess.CalledProcessError as e:
-        return f"<div class='container'><nav>{directory}</nav><section><h1>Error</h1>{str(e)}</section></div></body></html>"
-
-
+        error_output = e.stdout + "\n" + e.stderr if hasattr(e, 'stdout') and hasattr(e, 'stderr') else str(e)
+        return set_css() + f"<div class='container'><nav>{directory}</nav><section><h1>Error</h1><pre>{error_output}</pre></section></div></body></html>"
 @app.route('/doSearch', methods=['POST'])
 def doSearch():
 
