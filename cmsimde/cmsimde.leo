@@ -10692,24 +10692,27 @@ def acpform():
 </t>
 <t tx="leo.20221017090933.1">@app.route('/doAcp', methods=['POST'])
 def doAcp():
-
-    """Action to execute actForm inputs
-    """
-
+    """Action to execute actForm inputs"""
+    
     if not isAdmin():
         return redirect("/login")
-    else:
-        commit_messages = request.form['commit']
-        head, level, page = parse_content()
-        directory = render_menu(head, level, page)
-        # execute acp.bat with commit_messages
+    
+    commit_messages = request.form['commit']
+    head, level, page = parse_content()
+    directory = render_menu(head, level, page)
+    
+    try:
+        # Execute acp.bat with commit_messages
         if os.name == 'nt':
-            os.system("acp.bat \"" + commit_messages + "\"")
+            subprocess.run(["acp.bat", commit_messages], check=True)
         else:
-            os.system("./acp \"" + commit_messages + "\"")
-
-        return set_css() + "&lt;div class='container'&gt;&lt;nav&gt;"+ \
-                   directory + "&lt;/nav&gt;&lt;section&gt;&lt;h1&gt;Acp done&lt;/h1&gt;Acp done&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
+            subprocess.run(["./acp", commit_messages], check=True)
+        
+        return set_css() + "&lt;div class='container'&gt;&lt;nav&gt;" + \
+               directory + "&lt;/nav&gt;&lt;section&gt;&lt;h1&gt;Acp done&lt;/h1&gt;Acp done&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
+    
+    except subprocess.CalledProcessError as e:
+        return f"&lt;div class='container'&gt;&lt;nav&gt;{directory}&lt;/nav&gt;&lt;section&gt;&lt;h1&gt;Error&lt;/h1&gt;{str(e)}&lt;/section&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"
 
 
 </t>

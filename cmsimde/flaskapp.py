@@ -259,24 +259,27 @@ def doDelete():
 
 @app.route('/doAcp', methods=['POST'])
 def doAcp():
-
-    """Action to execute actForm inputs
-    """
-
+    """Action to execute actForm inputs"""
+    
     if not isAdmin():
         return redirect("/login")
-    else:
-        commit_messages = request.form['commit']
-        head, level, page = parse_content()
-        directory = render_menu(head, level, page)
-        # execute acp.bat with commit_messages
+    
+    commit_messages = request.form['commit']
+    head, level, page = parse_content()
+    directory = render_menu(head, level, page)
+    
+    try:
+        # Execute acp.bat with commit_messages
         if os.name == 'nt':
-            os.system("acp.bat \"" + commit_messages + "\"")
+            subprocess.run(["acp.bat", commit_messages], check=True)
         else:
-            os.system("./acp \"" + commit_messages + "\"")
-
-        return set_css() + "<div class='container'><nav>"+ \
-                   directory + "</nav><section><h1>Acp done</h1>Acp done</section></div></body></html>"
+            subprocess.run(["./acp", commit_messages], check=True)
+        
+        return set_css() + "<div class='container'><nav>" + \
+               directory + "</nav><section><h1>Acp done</h1>Acp done</section></div></body></html>"
+    
+    except subprocess.CalledProcessError as e:
+        return f"<div class='container'><nav>{directory}</nav><section><h1>Error</h1>{str(e)}</section></div></body></html>"
 
 
 @app.route('/doSearch', methods=['POST'])
