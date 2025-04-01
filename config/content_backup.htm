@@ -454,11 +454,14 @@ set  path_webots=%Disk%:\Webots_2025a\msys64\mingw64\bin;%Disk%:\Webots_2025a\ms
 
 path=%Disk%:;%path_python%;%path_git%;%path_copsim%;%path_msys2%;%path_miketex%;%path_flutter%;%path_node%;%path_tcc%;%path_postgresql%;%path_range%;%path_lua%;%path_core%;%path_putty%;%path_vscode%;%RUST_PATH%;%path_erlang%;%path_nodejs%;%path_haskell%;%path_scite%;%path_xsltproc%;%path_gnuplot%;%path_openssl%;%path_poppler%;%path_webots%;%path_blender%;%path%;</pre>
 <p>只要 Webots_2025a 位於可攜套件的 data 目錄下, 啟動可攜系統之後就可輸入 webotsw 開啟套件.</p>
-<p>各 Solid - Shape - geometry 在建立 open chain 機構時, 可以在尚未設定 physics 之前單軸運轉, 但 Webots 牽涉需要模擬 closed chain 機構時, 各 Solid - Shape -geometry 則必須設定 boundingObject 與 physics 才能透過 solidReference 進行 dynamics 聯立運算. 亦即 Webots 在模擬封閉機構時, 只能處理 Dynamics 模擬, 原因是其模擬運算是從 <a href="https://www.ode.org/">ODE</a> 動力程式庫修改而來, 並沒有附加 closed chain 的 kinematics 運算.</p>
-<p>當個別 link 採 box 建立時, 為了要符合其 kinematics 運動約束條件, 各桿件的起始條件必須滿足 fourbar linkage 的約束條件, 因此只有 link1 旋轉 90 度, 可以在 x 與 y 軸同動的情況下無需透 pose 進行局部座標轉換, 但 link2 與 link3 在納入 Shape 之前必須立 pose 節點置入額外的座標轉換.</p>
-<p>各 link 的 boundingObject 欄位, 可以透過其 link Shape 採 USE 的方式重用.</p>
-<p>最後 joint4 的旋轉中心則透過 solidReference 與 link3 的端點座標重合, 才能完成 closed chain 的動力約束條件模擬.</p>
-<p>所完成的 fourbar box 運動場景: <a href="/downloads/w7_2b_fourbar_box.7z">w7_2b_fourbar_box.7z</a></p><h3>Webots</h3>
+<p>建立 fourbar box 過程中的要點:</p>
+<ol>
+<li>各 Solid - Shape - geometry 在建立 open chain 機構時, 可以在尚未設定 physics 之前單軸運轉, 但 Webots 牽涉需要模擬 closed chain 機構時, 各 Solid - Shape -geometry 則必須設定 boundingObject 與 physics 才能透過 solidReference 進行 dynamics 聯立運算. 亦即 Webots 在模擬封閉機構時, 只能處理 Dynamics 模擬, 原因是其模擬運算是從 <a href="https://www.ode.org/">ODE</a> 動力程式庫修改而來, 並沒有附加 closed chain 的 kinematics 運算.</li>
+<li>當個別 link 採 box 建立時, 為了要符合其 kinematics 運動約束條件, 各桿件的起始條件必須滿足 fourbar linkage 的約束條件, 因此只有 link1 旋轉 90 度, 可以在 x 與 y 軸同動的情況下無需透 pose 進行局部座標轉換, 但 link2 與 link3 在納入 Shape 之前必須立 pose 節點置入額外的座標轉換.</li>
+<li>各 link 的 boundingObject 欄位, 可以透過其 link Shape 採 USE 的方式重用.</li>
+<li>最後 joint4 的旋轉中心則透過 solidReference 與 link3 的端點座標重合, 才能完成 closed chain 的動力約束條件模擬.</li>
+<li>所完成的 fourbar box 運動場景: <a href="/downloads/w7_2b_fourbar_box.7z">w7_2b_fourbar_box.7z</a></li>
+</ol><h3>Webots</h3>
 <h4>具有網頁介面的開源3D機器人模擬器</h4>
 <h4>專案概述</h4>
 <p></p>
