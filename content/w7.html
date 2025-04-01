@@ -2,7 +2,7 @@
         <head>
         <title>cd-scrum-1</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -142,11 +142,26 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Tutorial1 << <a href='Tutorial1.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3<br /><h1>HW2</h1>
-<p>HW2 (5%): <span style="background-color: #ffff00;">建立由 CAD 繪製零件組成的平面四連桿機構 Webots 模擬場景</span></p>
-<p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 學員學號</p>
-<p></p>
-<br />Tutorial1 << <a href='Tutorial1.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3</div>
+    <div id="tipue_search_content">task5 << <a href='task5.html'>Previous</a> <a href='Webots.html'>Next</a> >> Webots<br /><h1>w7</h1>
+<p>先下載 <a href="https://mde.tw/cd2025/downloads/fourbar_box.7z">fourbar_box.7z</a>, 以便作為建立模擬場景的參考.</p>
+<p>啟動可攜套件中的 Webots:</p>
+<p>start.bat 中已經安排以下的設定:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">REM for Webots
+set PYTHON_PATH=%Disk%:\Python313
+
+REM for webots
+set  path_webots=%Disk%:\Webots_2025a\msys64\mingw64\bin;%Disk%:\Webots_2025a\msys64\usr\bin
+
+path=%Disk%:;%path_python%;%path_git%;%path_copsim%;%path_msys2%;%path_miketex%;%path_flutter%;%path_node%;%path_tcc%;%path_postgresql%;%path_range%;%path_lua%;%path_core%;%path_putty%;%path_vscode%;%RUST_PATH%;%path_erlang%;%path_nodejs%;%path_haskell%;%path_scite%;%path_xsltproc%;%path_gnuplot%;%path_openssl%;%path_poppler%;%path_webots%;%path_blender%;%path%;</pre>
+<p>只要 Webots_2025a 位於可攜套件的 data 目錄下, 啟動可攜系統之後就可輸入 webotsw 開啟套件.</p>
+<p>建立 fourbar box 過程中的要點:</p>
+<ol>
+<li>各 Solid - Shape - geometry 在建立 open chain 機構時, 可以在尚未設定 physics 之前單軸運轉, 但 Webots 牽涉需要模擬 closed chain 機構時, 各 Solid - Shape -geometry 則必須設定 boundingObject 與 physics 才能透過 solidReference 進行 dynamics 聯立運算. 亦即 Webots 在模擬封閉機構時, 只能處理 Dynamics 模擬, 原因是其模擬運算是從 <a href="https://www.ode.org/">ODE</a> 動力程式庫修改而來, 並沒有附加 closed chain 的 kinematics 運算.</li>
+<li>當個別 link 採 box 建立時, 為了要符合其 kinematics 運動約束條件, 各桿件的起始條件必須滿足 fourbar linkage 的約束條件, 因此只有 link1 旋轉 90 度, 可以在 x 與 y 軸同動的情況下無需透 pose 進行局部座標轉換, 但 link2 與 link3 在納入 Shape 之前必須立 pose 節點置入額外的座標轉換.</li>
+<li>各 link 的 boundingObject 欄位, 可以透過其 link Shape 採 USE 的方式重用.</li>
+<li>最後 joint4 的旋轉中心則透過 solidReference 與 link3 的端點座標重合, 才能完成 closed chain 的動力約束條件模擬.</li>
+<li>所完成的 fourbar box 運動場景: <a href="./../downloads/w7_2b_fourbar_box.7z">w7_2b_fourbar_box.7z</a></li>
+</ol><br />task5 << <a href='task5.html'>Previous</a> <a href='Webots.html'>Next</a> >> Webots</div>
         
     <!-- footer -->
       <div class="container">
