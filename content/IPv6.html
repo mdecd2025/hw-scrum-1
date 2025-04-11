@@ -2,7 +2,7 @@
         <head>
         <title>cd-scrum-1</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -142,9 +142,36 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='Server.html'>Next</a> >> Server<br /><h1>AI</h1>
-<p></p>
-<br />About << <a href='About.html'>Previous</a> <a href='Server.html'>Next</a> >> Server</div>
+    <div id="tipue_search_content">Wink << <a href='Wink.html'>Previous</a> <a href='Fossil.html'>Next</a> >> Fossil<br /><h1>IPv6</h1>
+<p>已知 w4 之前的學員作業倉儲版本, 無法在 IPv6 位址設定時正確運作, 各學員必須下載 <a href="http://229.cycu.org/cmsimde_w4.7z">cmsimde_w4.7z</a>, 解開壓縮檔案後, 替換倉儲中的 cmsimde 目錄.</p>
+<p>IPv6 設定:</p>
+<p style="padding-left: 30px;">2a 各學員固定 IPv6 分配: 2001:288:6004:17:fff1:cd25:0000:a001<br/>2b 各學員固定 IPv6 分配: 2001:288:6004:17:fff1:cd25:0000:b001<br/>gateway: 2001:288:6004:17::254<br/>dns server: <br/>2001:288:6004:17::3<br/>2001:b000:168::1</p>
+<p>2a 以 <a href="./../downloads/w4_2a_index.txt">w4_2a_index.txt</a> 中的序號為準, 例如: 序號為 1 的學員其固定 IPv6 位址為:</p>
+<p style="padding-left: 30px;"><span>2001:288:6004:17:fff1:cd25:0000:a001</span></p>
+<p style="padding-left: 30px;"><span>若序號為 60 其 IPv6 位址為 2001:288:6004:17:fff1:cd25:0000:a060</span></p>
+<p>2b 以 <a href="./../downloads/w4_2b_index.txt">w4_2b_index.txt</a> 中的序號為準, 例如: 序號為 1 的學員其固定 IPv6 位址為:</p>
+<p style="padding-left: 30px;"><span>2001:288:6004:17:fff1:cd25:0000:b001</span></p>
+<p style="padding-left: 30px;"><span>若序號為 66 其 IPv6 位址為 2001:288:6004:17:fff1:cd25:0000:b066</span></p>
+<p>註: 利用 Brython <a href="https://mde.tw/wcm2025/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9f3df9d865a7ceca8e799ee9b1a31602/raw/5299aa53dc856df47c98993e016c9c0db2c74edf/2025_spring_set_mde_dns.py">產生</a> DNS 伺服器所需的設定.</p>
+<p>完成 dns 設定之後:</p>
+<p style="padding-left: 30px;">2a 序號為 1 的學員其伺服器主機符號名稱為 a1.mde.nfu.edu.tw, 序號 50 則對應 a50.</p>
+<p style="padding-left: 30px;">2b 序號為 1 的學員其伺服器主機符號名稱為 b1.mde.nfu.edu.tw, 序號 50 則對應 b50.</p>
+<hr/>
+<p>各組員將電腦設為所份配的固定 IPv6 後, 可以利用 python -m http.server, 在作業倉儲中啟動 port 8000 的 http 靜態網頁伺服器, 以下為各班的近端學員靜態網站連結:</p>
+<p><a href="https://mde.tw/cd2025/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9f3df9d865a7ceca8e799ee9b1a31602/raw/a4414e311503fac8d57d4f5e44999147c54cf7fa/list_2a_group.py">列出 2a 分組網站與倉儲連結</a></p>
+<p><a href="https://mde.tw/cd2025/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9f3df9d865a7ceca8e799ee9b1a31602/raw/a4414e311503fac8d57d4f5e44999147c54cf7fa/list_2b_group.py">列出 2b 分組網站與倉儲連結</a></p>
+<p>2a IPv6 port 8000 連線列表</p>
+<p><a href="https://mde.tw/cd2025/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9f3df9d865a7ceca8e799ee9b1a31602/raw/48af059c96052719dc03d5fe8ee8af9a6033afc7/w4_2b_ipv6_stud_num.py">2b IPv6 port 8000 連線列表</a> (<a href="https://mde.tw/cd2025/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9f3df9d865a7ceca8e799ee9b1a31602/raw/35707a62977b9829179159ffd34140d600ef8158/w4_2b_ipv6_task3.py">列出無法連線學員</a>)</p>
+<hr/>
+<p>以下為與 AI 系統的對話:</p>
+<p>請用 Brython 寫出在 id="brython_div1" 嵌入 html 連結的程式. 希望各連結能透過 http 協定連結到班上有 66 位學員的靜態網頁. 其中各學員的固定 IPv6 分別為 2001:288:6004:17:fff1:cd25:0000:b001 到 2001:288:6004:17:fff1:cd25:0000:b066, 且使用 port 8000 進行連結. 請寫出此一 Brython 程式.</p>
+<p>取得下列程式: <a href="https://mde.tw/cd2025/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9f3df9d865a7ceca8e799ee9b1a31602/raw/5674eb19769159d503b2263726279dc4e7f26c1f/w4_2b_ipv6.py">透過 2b 學員序號列出其 IPv6 靜態網站</a></p>
+<p>完成上述以序號標示後, 透過下列詢問可以取得以學號作為標示的各學員近端靜態網站連結.</p>
+<p style="padding-left: 30px;">任務一: 請用 Brython 寫出在 id="brython_div1" 嵌入 html 連結的程式. 希望各連結能透過 http 協定連結到班上有 66 位學員的靜態網頁. 其中各學員的固定 IPv6 分別為 2001:288:6004:17:fff1:cd25:0000:b001 到 2001:288:6004:17:fff1:cd25:0000:b066, 且使用 port 8000 進行連結. 請寫出此一 Brython 程式.</p>
+<p style="padding-left: 30px;">任務二: 若各學員序號取自 https://mde.tw/cd2025/downloads/w4_2b_index.txt, 且此一資料以空白隔開序號加"." 及學號, 能否修改成以學員的學號作為 html 的標示.</p>
+<p style="padding-left: 30px;">任務三: 完成各學員的 html 連結後, 請再用 Brython 程式設法進入每一位學員的網站查驗, 是否可以讀取到該連結 content 目錄中的 About.html, 若可以則 pass, 若無法連結則列出無法完成連結的學員學號.</p>
+<p style="padding-left: 30px;">請分別列出上述三個任務的程式碼.</p>
+<br />Wink << <a href='Wink.html'>Previous</a> <a href='Fossil.html'>Next</a> >> Fossil</div>
         
     <!-- footer -->
       <div class="container">
