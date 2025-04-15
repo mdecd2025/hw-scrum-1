@@ -502,8 +502,11 @@ path=%Disk%:;%path_python%;%path_git%;%path_copsim%;%path_msys2%;%path_miketex%;
 </ol>
 <p>根據第一個情況，若將 fourbar linkage 的 joint4 設置在 base link 的最右端，然後將 joint4 的 endPoint 欄位，設為 SolidReference 指向 link3，即可符合 Soild (link3) 與 Joint (joint4) 都是某個共同上層 Solid (base) 的後代。</p>
 <p>至於第二個情況，則可以將 fourbar linkage 的 joint4 設置在 link3 的末端，然後將 joint4 的 endPoint 欄位指向 &lt;static environment&gt;，讓 link3 的末端固定在 ground (其作用與固定在 base 節點相同)。</p>
+<p>fourbar box 四連桿機構:</p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/cd2025/downloads/fourbar_box.7z">fourbar_box.7z</a> 的 <a href="https://cyberbotics.com/doc/reference/solidreference">SolidReference</a> 採用第一種作法，joint4 位於 base link，然後參照指向 link3。</p>
-<p style="padding-left: 30px;"><a href="https://mde.tw/cd2025/downloads/fourbar_box_w8.7z">fourbar_box_w8.7z</a> (將 joint4 接在 link3 末端，然後 <a href="https://cyberbotics.com/doc/reference/solidreference">SolidReference</a> 參照到內定的 &lt;static environment&gt;， 表示將 link3 末端的 joint4 直接固定在 base 上 (固定點)。</p><h3>Blender</h3>
+<p style="padding-left: 30px;"><a href="https://mde.tw/cd2025/downloads/fourbar_box_w8.7z">fourbar_box_w8.7z</a> (將 joint4 接在 link3 末端，然後 <a href="https://cyberbotics.com/doc/reference/solidreference">SolidReference</a> 參照到內定的 &lt;static environment&gt;， 表示將 link3 末端的 joint4 直接固定在 base 上 (固定點)。</p>
+<p>fourbar solvespace 四連桿機構:</p>
+<p style="padding-left: 30px;"><a href="/downloads/fourbar_slvs.7z">fourbar_slvs.7z</a> 採用第一種作法。</p><h3>Blender</h3>
 <p><a href="https://docs.blender.org/manual/en/latest">Blender Manual</a> (<a href="https://vagon.io/blog/complete-guide-to-blender-3d-for-beginners#history-and-evolution-of-blender-3d">Reference</a>)</p>
 <p><a href="/downloads/camp_blender.pdf">camp_blender.pdf</a></p>
 <p>Add - Mesh - UV Sphere</p>
@@ -577,8 +580,13 @@ path=%Disk%:;%path_python%;%path_git%;%path_copsim%;%path_msys2%;%path_miketex%;
 <p>Deepbots 框架的源代碼和更多信息可在 <a href="https://github.com/aidudezzz/deepbots">GitHub</a> 上找到。</p>
 <h2>task6</h2>
 <h4>Webots Tutorial 4 ~6 (HW3)</h4>
-<p></p>
-<h1>Homework</h1>
+<p>Webots 啟動時，同時啟動串流伺服器指令: webotsw --stream</p>
+<p>內建埠號為 1234，由於採用 WebGL2 進行網頁著色，因此在 Windows 環境中使用 Edge 連線至 <a href="http://localhost:1234">http://localhost:1234</a> 或 <a href="http://stream_server_ip:1234">http://stream_server_ip:1234</a> 將會較為順暢.</p>
+<p>至於希望利用 display 展示投籃成績的方法，僅能在近端 Webots 套件中檢視，因此若要讓記分板或計時器能在串流瀏覽器中展示，必須採用 7 段顯示器設置，並利用 supervisor 模式進行操控.</p>
+<p>利用 Solvespace 繪製的 7 段顯示器零組件檔案: <a href="/downloads/score_counter.7z">score_counter.7z</a></p>
+<p>若要在 Webots 中利用變顏色的 .obj 零件顯示數字, 可以透過 Solid - Shape - Mesh 然後將 url 指向 7 段顯示器中的 a ~ g 零件, 並且利用 controller 改變各零件的顏色.</p>
+<p>利用 r, b, y, g 按鍵改變 7 段顯示器中的 f 零件示範場景: <a href="/downloads/7_segment_display.7z">7_segment_display.7z</a></p>
+<p></p><h1>Homework</h1>
 <p>作業 (30%)</p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p style="padding-left: 30px;">part1:</p>
