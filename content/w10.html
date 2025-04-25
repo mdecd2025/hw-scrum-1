@@ -157,6 +157,8 @@ img.add_border {
 <p style="padding-left: 30px;">已知可以透過 boundingObject 中的 Mesh 設定, 讓封閉連桿執行投籃動作, 且經由紅外線距離感測紀錄是否得分</p>
 <p style="padding-left: 30px;">接下來若要利用各組員所分配的 <a href="https://mde.tw/cd2025/content/IPv6.html">IPv6 位址</a>配置一台具備 https 連線用的網際協同伺服器, 建議使用 Virtualbox 或 <a href="https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion">VMWare Workstation</a> 加上 Nginx, Stunnel 或直接採 cmsimde 進行設定.</p>
 <p style="padding-left: 30px;">投籃機與籃框的移動裝置則可採用 <a href="https://www.cyberbotics.com/doc/guide/youbot?version=cyberbotics:R2019a-rev1#!">Kuka 套件項下</a>的 <a href="https://mde.tw/cd2025/content/Youbot_cart.html">Youbot</a> <a href="https://en.wikipedia.org/wiki/Mecanum_wheel">Mecanum</a> 輪底座.</p>
+<p style="padding-left: 30px;">對於 webotsw --stream 在近端啟動伺服器的部分尚未完成, 目前僅能透過官方網站擷取 Webotsview.js, 具體問題在於 webots 串流伺服器啟動後, 不接受跨網域擷取 Webotsview.js, 亦即必須處理伺服器間的 Access-Control-Allow-Origin（CORS）議題. 自行 <a href="https://github.com/cyberbotics/webots/wiki/Windows-installation/">build webotsw.exe</a> 應該就可以克服此一問題.</p>
+<p style="padding-left: 30px;">另外 Webots stream server 目前僅接受多 client 檢視, 而不支援跨 server 執行 controller 指令, 若要在系統模擬架構下進行多人同步協同 (類似 CoppeliaSim 的串流控制), 則必須自行處理.</p>
 <hr/>
 <p><a href="./../downloads/w10_2b_hw1_hw2_demo.7z">w10_2b_hw1_hw2_demo.7z</a></p>
 <p>以下模擬將 joint4 定在 link3 末端, 然後透過 SolidReference 指定為 &lt;static environment&gt;, 表示此 joint4 必須固定在地面.</p>

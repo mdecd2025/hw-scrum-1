@@ -597,13 +597,14 @@ path=%Disk%:;%path_python%;%path_git%;%path_copsim%;%path_msys2%;%path_miketex%;
 <p style="padding-left: 30px;">已知如何使用 Codespaces 管理個人與協同分組的倉儲</p>
 <p style="padding-left: 30px;">已知可以透過 token 或 Github session 管理管理個人與協同分組的倉儲</p>
 <p style="padding-left: 30px;">已知哪一個版本的 Webots 較為穩定</p>
-<p style="padding-left: 30px;">已知如何更新個人與協同分組的倉儲, 以便套用所分配的 IPv6 位址啟動網際協同流程</p>
+<p style="padding-left: 30px;">已知如何更新個人與協同分組的倉儲, 以便套用所分配的 <a href="https://mde.tw/cd2025/content/IPv6.html">IPv6 位址</a>啟動網際協同流程</p>
 <p style="padding-left: 30px;">已知投籃機的零組件可以透過 Solvespace 與 Onshape 繪製, 其中前者簡便而後者有利於協同</p>
 <p style="padding-left: 30px;">已知如何利用 Solid - Shape - Box 或 Solid - CadShape 建立封閉式多連桿機構模擬, (若希望直接更改零組件顏色, 則可以使用 Solid - Shape - Mesh 進行多連桿機構進行組立</p>
 <p style="padding-left: 30px;">已知可以透過 Solid - Shape - Mesh 中 material 的名稱, 以控制器程式改變顏色, 進而製作出七段顯示模擬器</p>
 <p style="padding-left: 30px;">已知可以透過 boundingObject 中的 Mesh 設定, 讓封閉連桿執行投籃動作, 且經由紅外線距離感測紀錄是否得分</p>
-<p style="padding-left: 30px;">接下來若要利用各組員所分配的 IPv6 位置配置一台具備 https 連線用的網際協同伺服器, 建議使用 Virtualbox 或 <a href="https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion">VMWare Workstation</a> 加上 Nginx, Stunnel 或直接採 cmsimde 進行設定.</p>
-<p style="padding-left: 30px;">投籃機與籃框的移動裝置則可採用 Kuka 套件項下的 Youbot <a href="https://en.wikipedia.org/wiki/Mecanum_wheel">Mecanum</a> 輪底座.</p>
+<p style="padding-left: 30px;">接下來若要利用各組員所分配的 <a href="https://mde.tw/cd2025/content/IPv6.html">IPv6 位址</a>配置一台具備 https 連線用的網際協同伺服器, 建議使用 Virtualbox 或 <a href="https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion">VMWare Workstation</a> 加上 Nginx, Stunnel 或直接採 cmsimde 進行設定.</p>
+<p style="padding-left: 30px;">投籃機與籃框的移動裝置則可採用 <a href="https://www.cyberbotics.com/doc/guide/youbot?version=cyberbotics:R2019a-rev1#!">Kuka 套件項下</a>的 <a href="https://mde.tw/cd2025/content/Youbot_cart.html">Youbot</a> <a href="https://en.wikipedia.org/wiki/Mecanum_wheel">Mecanum</a> 輪底座.</p>
+<p style="padding-left: 30px;">對於 webotsw --stream 在近端啟動伺服器的部分尚未完成, 目前僅能透過官方網站擷取 Webotsview.js, 具體問題在於 webots 串流伺服器啟動後, 不接受跨網域擷取 Webotsview.js, 亦即必須處理伺服器間的 Access-Control-Allow-Origin（CORS）議題.</p>
 <hr/>
 <p><a href="/downloads/w10_2b_hw1_hw2_demo.7z">w10_2b_hw1_hw2_demo.7z</a></p>
 <p>以下模擬將 joint4 定在 link3 末端, 然後透過 SolidReference 指定為 &lt;static environment&gt;, 表示此 joint4 必須固定在地面.</p>
