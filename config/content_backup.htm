@@ -637,7 +637,7 @@ path=%Disk%:;%path_python%;%path_git%;%path_copsim%;%path_msys2%;%path_miketex%;
 <p><span>執行之前, 必須將 Webots 內建的動態連結程式庫納入可攜 Python: set PYTHONPATH=%Disk%:\Python313\DLLs;%Disk%:\Python313\Lib;%Disk%:\Python313\Lib\site-packages;%Disk%:\NX\NXBIN\python;%Disk%:\Webots_2023b\msys64\mingw64\bin;%Disk%:\Webots_2023b\lib\controller\python;</span></p>
 <p><span>啟動順序: 先 Run simulation, 執行 server, 然後再執行 client 後進行控制.</span></p>
 <p><span>17. w13 利用 supervisor 模式, 希望當投球機投出球後, 無論得分與否, 只要投球機構回復原始投球姿態後, controller 將會自動在原球位置產生另一顆球, proof of concept 如 <a href="/downloads/w13_random_sphere.7z">w13_random_sphere.7z</a> 所示.</span></p>
-<p><span>Robot 與 Supervisor 節點的結合應用: <a href="/downloads/basketball_game_w13.7z">basketball_game_w13.7z</a><br/></span></p>
+<p><span><a href="https://cyberbotics.com/doc/reference/robot?tab-language=python">Robot</a> 與 <a href="https://cyberbotics.com/doc/reference/supervisor?tab-language=python">Supervisor</a> 節點的結合應用: <a href="/downloads/basketball_game_w13.7z">basketball_game_w13.7z</a></span></p>
 <hr/>
 <p><a href="/downloads/w10_2b_hw1_hw2_demo.7z">w10_2b_hw1_hw2_demo.7z</a></p>
 <p>以下模擬將 joint4 定在 link3 末端, 然後透過 SolidReference 指定為 &lt;static environment&gt;, 表示此 joint4 必須固定在地面.</p>
@@ -654,7 +654,8 @@ path=%Disk%:;%path_python%;%path_git%;%path_copsim%;%path_msys2%;%path_miketex%;
 <li><a href="https://wiki.fileformat.com/3d/obj" target="_blank">Wavefront</a> files (.obj).</li>
 </ul>
 <p>If the file contains more than one mesh, the meshes will be merged into a single one.</p>
-<p>Mesh 可以接受 .dae、stl 或 .obj 檔案格式零件, 且可用於零件外形與碰撞檢測用 (CadShape 節點則只能用於零件外形展示, 而不能用於碰撞檢測).</p><h1>Homework</h1>
+<p>Mesh 可以接受 .dae、stl 或 .obj 檔案格式零件, 且可用於零件外形與碰撞檢測用 (CadShape 節點則只能用於零件外形展示, 而不能用於碰撞檢測).</p>
+<h3>Closing</h3><h1>Homework</h1>
 <p>作業 (30%)</p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p style="padding-left: 30px;">part1:</p>
