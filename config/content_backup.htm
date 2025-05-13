@@ -589,7 +589,7 @@ path=%Disk%:;%path_python%;%path_git%;%path_copsim%;%path_msys2%;%path_miketex%;
 <p><img alt="" height="328" src="/images/solid_shape_mesh_color_changed.gif" width="400"/></p>
 <p><a href="/downloads/three_digit_counter.7z">three_digit_counter.7z</a></p>
 <p></p>
-<h3>w10</h3>
+<h3>Since w10</h3>
 <p>截至目前已知:</p>
 <p style="padding-left: 30px;">1. 最新的可攜程式系統與套件版本:</p>
 <p style="padding-left: 60px;"><a href="http://229.cycu.org/portable_wcm2025_w10.7z">portable_wcm2025_w10.7z</a></p>
@@ -636,6 +636,8 @@ path=%Disk%:;%path_python%;%path_git%;%path_copsim%;%path_msys2%;%path_miketex%;
 <p>備註: 上列模擬場景, 若在同一台電腦上可以利用 <a href="http://229.cycu.org/win10.vdi">win10.vdi</a><span><span> </span>(Virtualbox 的 Windows 10 虛擬主機檔案) 設定各自所分配的 <a href="https://mde.tw/cd2025/content/IPv6.html">IPv6 位址</a>進行測試. 也可以在同組組員之間進行測試.</span></p>
 <p><span>執行之前, 必須將 Webots 內建的動態連結程式庫納入可攜 Python: set PYTHONPATH=%Disk%:\Python313\DLLs;%Disk%:\Python313\Lib;%Disk%:\Python313\Lib\site-packages;%Disk%:\NX\NXBIN\python;%Disk%:\Webots_2023b\msys64\mingw64\bin;%Disk%:\Webots_2023b\lib\controller\python;</span></p>
 <p><span>啟動順序: 先 Run simulation, 執行 server, 然後再執行 client 後進行控制.</span></p>
+<p><span>17. w13 利用 supervisor 模式, 希望當投球機投出球後, 無論得分與否, 只要投球機構回復原始投球姿態後, controller 將會自動在原球位置產生另一顆球, proof of concept 如 <a href="/downloads/w13_random_sphere.7z">w13_random_sphere.7z</a> 所示.</span></p>
+<p><span><a href="https://cyberbotics.com/doc/reference/robot?tab-language=python">Robot</a> 與 <a href="https://cyberbotics.com/doc/reference/supervisor?tab-language=python">Supervisor</a> 節點的結合應用: <a href="/downloads/basketball_game_w13.7z">basketball_game_w13.7z</a></span></p>
 <hr/>
 <p><a href="/downloads/w10_2b_hw1_hw2_demo.7z">w10_2b_hw1_hw2_demo.7z</a></p>
 <p>以下模擬將 joint4 定在 link3 末端, 然後透過 SolidReference 指定為 &lt;static environment&gt;, 表示此 joint4 必須固定在地面.</p>
@@ -652,7 +654,8 @@ path=%Disk%:;%path_python%;%path_git%;%path_copsim%;%path_msys2%;%path_miketex%;
 <li><a href="https://wiki.fileformat.com/3d/obj" target="_blank">Wavefront</a> files (.obj).</li>
 </ul>
 <p>If the file contains more than one mesh, the meshes will be merged into a single one.</p>
-<p>Mesh 可以接受 .dae、stl 或 .obj 檔案格式零件, 且可用於零件外形與碰撞檢測用 (CadShape 節點則只能用於零件外形展示, 而不能用於碰撞檢測).</p><h1>Homework</h1>
+<p>Mesh 可以接受 .dae、stl 或 .obj 檔案格式零件, 且可用於零件外形與碰撞檢測用 (CadShape 節點則只能用於零件外形展示, 而不能用於碰撞檢測).</p>
+<h3>Closing</h3><h1>Homework</h1>
 <p>作業 (30%)</p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p style="padding-left: 30px;">part1:</p>
@@ -1032,8 +1035,12 @@ while robot.step(TIME_STEP) != -1:
 </ol>
 <p></p><h2>Exam3</h2>
 <p>Exam3 (20%): Webots 機電模擬場景的協同設計</p>
-<p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam3 - 學員學號</p>
-<h1>Final</h1>
+<ol>
+<li>請每位學員利用在 <a href="https://mde.tw/cd2025/content/IPv6.html">https://mde.tw/cd2025/content/IPv6.html</a> 中所分配的個人 IPv6 網址, 以 webotsw --stream 啟動個人所完成的 HW1 模擬系統. 並在其餘組員的電腦上, 以瀏覽器檢視啟動串流學員伺服器上的機構模擬. 完成後請各學員將操作與設定說明過程拍成影片, 上傳至 Youtube, 影片標題: <span>"</span><span><span style="background-color: #ffff00;">國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam3-1 - 學員學號</span>".</span></li>
+<li><span>請每位學員利用 <a href="https://mdecd2025.github.io/hw-scrum-1/downloads/three_digit_counter.7z">three_digit_counter.7z</a> 中的七段顯示器進行修改, 以 webotsw --stream 啟動後, 可在其餘組員的電腦中, 透過瀏覽器檢視參與協同組員 Webots 中所展示的<span style="background-color: #ccffcc;">學員學號</span>. 完成後請各學員將操作與設定說明過程拍成影片, 上傳至 Youtube, 影片標題: "<span style="background-color: #ffff00;">國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam3-2 - 學員學號</span>".</span></li>
+<li><span>請各組利用 <a href="https://mde.tw/cd2025/downloads/youbot_cart_w10_websocket.7z">youbot_cart_w10_websocket.7z</a> 中的 Youbot 底座平台, 由各組組長以 webotsw --stream 啟動後, 可在其餘組員的電腦中, 透過 Websocket 客戶端程式控制平台車的前進、後退與左右轉. 完成後請各學員將操作與設定說明過程拍成影片, 上傳至 Youtube, 影片標題: "<span style="background-color: #ffff00;">國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam3-3 - 學員學號</span>".</span></li>
+<li><span>上述機電模擬場景的協同設計, 請分別由各組組員將所完成的影片與心得整理在個人作業網站中的 Exam3 頁面後, 再逐一利用組員的帳號權限, 將個人心得與上述操作影片, 統一放入分組網站中的 Exam3 頁面中.</span></li>
+</ol><h1>Final</h1>
 <p><span>期末協同專案執行過程影片、簡報與 PDf 報告檔案 (六人一組) (30%)</span></p>
 <p><span>題目: <span style="background-color: #ccffcc;">Webots 動態投籃模擬系統的協同設計</span></span></p>
 <p><span>說明: </span></p>
