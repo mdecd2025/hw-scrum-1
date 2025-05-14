@@ -147,6 +147,9 @@ img.add_border {
 <p>請將個人根據<span> </span><a href="https://mde.tw/cd2025/content/Stage1.html">https://mde.tw/cd2025/content/Stage1.html</a><span> </span>導引內容的<span>練習、以及製作 HW1 的過程</span>拍攝成帶有說明字幕的影片, 根據下列影片標題上傳至 Youtube 後在指定時段內回傳至指定表單. 並在個人作業倉儲中以 HW1 頁面紀錄相關過程與心得.</p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW1 - 學員學號</p>
 <hr/>
+<p>這個作業至少有兩種 closed chain 的設定方法, 其一是將 joint4 設於 base link 然後在 joint4 的 endPoint 以 cadReference 參照到 link3, 意即 joint4 雖然位於 base link, 同時也要求其位於 link3. 設定完成必須僅保留一個主動 device, 然後個轉動 links 都必須設定 boundingObject 與 physics 欄位內容, 才能進行 dynamic closed chain 的聯立運算.</p>
+<p>第二種 closed chain 設定方法也可以將 joint4 設於 link3 然後在 joint4 的 endPoint, 以 cadReferce 參照到內定的 &lt;static reference&gt;, 表示 joint4 除了必須在 link3 端點之外, 同時必須固定在"地面", 但卻不可將其 cadReference 參照到 base link.</p>
+<hr/>
 <p>以下將利用 box 幾何外形節點建立平面四連桿機構的模擬場景, 要求地面固定桿長度 1m, 寬高各為 0.1m, 第一桿長度 0.4m, 第二桿長度 0.6m, 第三桿長度 0.9m.</p>
 <p><span style="background-color: #00ff00;">Step1:</span> 在可攜程式套件中開啟 Webots, 也就是在 cmd 視窗中輸入 webotsw 就可以開啟套件, 但安裝 Windows 的電腦必須符合<a href="https://cyberbotics.com/doc/guide/system-requirements">硬體規格的要求</a>.</p>
 <p><span style="background-color: #00ff00;">Step2:</span> Webots 啟動後, 可以利用下拉式功能表 File - New - New Project Directory, 選擇 Y:\tmp\hw1 作為專案目錄, 建立 hw1.wbt, 其中因為不需要設置地板, 因此 Add a rectangle arena 選項可以不用勾選.</p>

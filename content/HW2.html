@@ -146,7 +146,10 @@ img.add_border {
 <p>HW2 (5%): 建立由 CAD 繪製零件組成的平面四連桿機構 Webots 模擬場景</p>
 <p>請將個人根據 <a href="https://mde.tw/cd2025/content/Stage2.html">https://mde.tw/cd2025/content/Stage2.html</a><span> </span>導引內容的<span>練習、以及製作 HW2 的過程</span>拍攝成帶有說明字幕的影片, 根據下列影片標題上傳至 Youtube 後在指定時段內回傳至指定表單. 並在個人作業倉儲中以 HW2 頁面紀錄相關過程與心得.</p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 學員學號</p>
-<p></p><br />Tutorial1 << <a href='Tutorial1.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3</div>
+<hr/>
+<p>由於這個作業的所有零件, 在 CAD 組立時已經精確定位, 因此當轉為 obj 或 stl 時, 所有零件都以 CAD 組立時的原點作為相對參考座標.</p>
+<p>若場景中的零件採用 Solid - <a href="https://cyberbotics.com/doc/reference/cadshape">cadShape</a> 則僅能參照 Collada (.dae) 或 Wavefront (.obj), 但若使用 Solid - Shape - Mesh, 則可以參照到 .obj 或 .stl 格式零件, 且不像 <a href="https://cyberbotics.com/doc/reference/cadshape">cadShape</a> 僅能使用外部的 .mtl 定義其零件的顏色或材質, Mesh 所參照的零件可以直接透過 <a href="https://www.cyberbotics.com/doc/reference/shape">Shape</a> 額外的 apperance 欄位直接在場景中定義材質與顏色.</p>
+<p>至於 closed chain 中的設定與 HW1 相同, link4 可以設於 base link, 也可以設於 link3.</p><br />Tutorial1 << <a href='Tutorial1.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3</div>
         
     <!-- footer -->
       <div class="container">
